@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { companies, nav } from "@/content/data";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const path = usePathname();
@@ -11,7 +12,9 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header-inner">
-        <Link href="/" aria-label="Commander Group home"><img src="/img/logo-1-white.png" alt="Commander Group" /></Link>
+        <Link href="/" aria-label="Commander Group home">
+          <span className="logo-chip"><img src="/img/commander-logo.png" alt="Commander Group" /></span>
+        </Link>
         <nav className={`nav ${open ? "open" : ""}`}>
           {nav.map((n) =>
             n.children ? (
@@ -27,7 +30,10 @@ export default function Header() {
           )}
           <Link href="/career" className="btn primary" style={{ marginLeft: 6, padding: "10px 18px" }}>Career</Link>
         </nav>
-        <button className="menu-btn" onClick={() => setOpen(!open)} aria-label="Toggle menu">{open ? "✕" : "☰"}</button>
+        <div className="hdr-actions">
+          <ThemeToggle />
+          <button className="menu-btn" onClick={() => setOpen(!open)} aria-label="Toggle menu">{open ? "✕" : "☰"}</button>
+        </div>
       </div>
     </header>
   );

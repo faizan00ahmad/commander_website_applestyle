@@ -14,8 +14,8 @@ export default function Chairman() {
           <Reveal>
             <div className="prose">
               {chairman.letter.map((p) => <p key={p}>{p}</p>)}
-              <p style={{ color: "#fff" }}>{chairman.regards}</p>
-              <p style={{ color: "#fff", marginBottom: 4, fontSize: 20 }}><b>{chairman.signer}</b></p>
+              <p style={{ color: "var(--hi)" }}>{chairman.regards}</p>
+              <p style={{ color: "var(--hi)", marginBottom: 4, fontSize: 20 }}><b>{chairman.signer}</b></p>
               <p className="muted">{chairman.signerRole}</p>
               <img src="/img/ceo-sign.png" alt="Signature" style={{ height: 70, width: "auto", background: "#fff", borderRadius: 10, padding: 8 }} />
             </div>

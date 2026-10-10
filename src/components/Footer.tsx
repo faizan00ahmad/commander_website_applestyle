@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="container">
         <div className="foot-grid">
           <div>
-            <img src="/img/logo-1-white.png" alt="Commander Group" />
+          <span className="logo-chip"><img src="/img/commander-logo.png" alt="Commander Group" /></span>
             <p>Quality within your reach. Serving Pakistan since {site.founded}.</p>
             <div className="socials">
               <a href={site.facebook} target="_blank" rel="noreferrer">Facebook</a>

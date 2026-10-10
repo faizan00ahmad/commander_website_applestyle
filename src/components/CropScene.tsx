@@ -13,9 +13,9 @@ export default function CropScene() {
           </radialGradient>
         </defs>
         <circle cx="250" cy="250" r="240" fill="url(#sun)" />
-        <circle cx="250" cy="250" r="200" fill="none" stroke="rgba(255,255,255,.08)" />
-        <circle cx="250" cy="250" r="150" fill="none" stroke="rgba(255,255,255,.06)" strokeDasharray="3 9" />
-        <path d="M20 420 H480" stroke="rgba(255,255,255,.18)" />
+        <circle cx="250" cy="250" r="200" fill="none" style={{ stroke: "rgba(var(--fg),.08)" }} />
+        <circle cx="250" cy="250" r="150" fill="none" strokeDasharray="3 9" style={{ stroke: "rgba(var(--fg),.1)" }} />
+        <path d="M20 420 H480" style={{ stroke: "rgba(var(--fg),.22)" }} />
         {stalks.map((x, i) => {
           const top = 180 - (i % 2) * 30;
           return (
