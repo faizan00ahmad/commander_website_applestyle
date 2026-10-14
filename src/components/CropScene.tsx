@@ -8,10 +8,10 @@ export default function CropScene() {
       <svg viewBox="0 0 500 500">
         <defs>
           <radialGradient id="cs-sun" cx="50%" cy="55%" r="50%">
-            <stop offset="0" stopColor="#2bc365" stopOpacity=".42" /><stop offset="1" stopColor="#2bc365" stopOpacity="0" />
+            <stop offset="0" stopColor="#3db86a" stopOpacity=".42" /><stop offset="1" stopColor="#3db86a" stopOpacity="0" />
           </radialGradient>
           <linearGradient id="cs-shield" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#2bc365" stopOpacity=".5" /><stop offset="1" stopColor="#2bc365" stopOpacity="0" />
+            <stop offset="0" stopColor="#3db86a" stopOpacity=".5" /><stop offset="1" stopColor="#3db86a" stopOpacity="0" />
           </linearGradient>
         </defs>
         <circle cx="250" cy="270" r="235" fill="url(#cs-sun)" />
@@ -19,7 +19,7 @@ export default function CropScene() {
         <path d="M40 430 H460" style={{ stroke: "rgba(var(--fg),.12)" }} strokeDasharray="4 8" />
 
         {/* protective shield over the crop */}
-        <path className="cs-shield" d="M40 420 C40 190 460 190 460 420" fill="url(#cs-shield)" stroke="#2bc365" strokeWidth="2" strokeDasharray="6 8" />
+        <path className="cs-shield" d="M40 420 C40 190 460 190 460 420" fill="url(#cs-shield)" stroke="#3db86a" strokeWidth="2" strokeDasharray="6 8" />
 
         {/* wheat: stressed colour fades to healthy as the loop heals */}
         {stalks.map((x, i) => {
@@ -49,7 +49,7 @@ export default function CropScene() {
         <g className="cs-drone">
           <rect x="378" y="86" width="64" height="12" rx="5" fill="#e8edf5" />
           <rect x="366" y="82" width="88" height="3" rx="1.5" style={{ fill: "rgba(var(--fg),.5)" }} />
-          <circle cx="410" cy="106" r="7" fill="#2bc365" />
+          <circle cx="410" cy="106" r="7" fill="#3db86a" />
           {[0, 1, 2, 3, 4, 5].map((k) => (
             <circle key={k} className="cs-mist" cx={394 + k * 7} cy="118" r="2.6" fill="#7ff0b0" style={{ animationDelay: `${k * 0.22}s` }} />
           ))}

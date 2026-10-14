@@ -18,7 +18,7 @@ function webglOk() {
 function themeInfo() {
   const root = document.documentElement;
   const s = getComputedStyle(root);
-  return { green: s.getPropertyValue("--green").trim() || "#2bc365", gold: s.getPropertyValue("--grain").trim() || "#ffd658", dark: root.dataset.theme !== "light" };
+  return { green: s.getPropertyValue("--green").trim() || "#3db86a", gold: s.getPropertyValue("--grain").trim() || "#c5d87a", dark: root.dataset.theme !== "light" };
 }
 
 /** Hero artwork. Wide screens with a mouse and WebGL get the 3D "Crop Shield" story (loaded on demand) with a live
@@ -27,7 +27,7 @@ export default function HeroVisual() {
   const ok = useMotionOk(1024);
   const intro = useIntroDone();
   const [use3d, setUse3d] = useState(false);
-  const [theme, setTheme] = useState({ green: "#2bc365", gold: "#ffd658", dark: true });
+  const [theme, setTheme] = useState({ green: "#3db86a", gold: "#c5d87a", dark: true });
   const [stats, setStats] = useState<HeroStats>({ health: 0.5, pests: 1 });
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
