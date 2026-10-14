@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/PageHero";
@@ -12,7 +13,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const c = companies.find((x) => x.slug === params.slug);
-  return { title: `${c?.name ?? "Company"} | Commander Group` };
+  return { title: `${c?.name ?? "Company"} | Commander Group`, description: c ? c.description[0].replace(/^Plant site address:[^.]*.s*/, "").slice(0, 155).trimEnd() + "…" : undefined };
 }
 
 export default function Company({ params }: { params: { slug: string } }) {
@@ -36,7 +37,7 @@ export default function Company({ params }: { params: { slug: string } }) {
           ) : (
             <div className="co-grid">
               <Reveal>
-                {c.logo && <div className="logo-box"><img src={c.logo} alt={c.name} /></div>}
+                {c.logo && <div className="logo-box"><img src={asset(c.logo)} alt={c.name} /></div>}
                 <div className="prose">{c.description.map((p) => <p key={p}>{p}</p>)}</div>
               </Reveal>
               <Reveal delay={1}>

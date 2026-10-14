@@ -1,6 +1,8 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "commander-site", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev"], "port": 3000, "autoPort": true }
+    { "name": "commander-site", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev"], "port": 3000, "autoPort": true },
+    { "name": "static-root-check", "runtimeExecutable": "node", "runtimeArgs": ["C:\\Users\\AL-HUS~1\\AppData\\Local\\Temp\\claude\\D--all-apps-commander-website\\239e7011-d68b-42f7-82eb-8d1b09ba46ea\\scratchpad\\serve-out.js", "C:\\Users\\AL-HUS~1\\AppData\\Local\\Temp\\claude\\D--all-apps-commander-website\\239e7011-d68b-42f7-82eb-8d1b09ba46ea\\scratchpad\\buildcopy\\out"], "port": 5056, "autoPort": true },
+    { "name": "static-build-check", "runtimeExecutable": "node", "runtimeArgs": ["C:\\Users\\AL-HUS~1\\AppData\\Local\\Temp\\claude\\D--all-apps-commander-website\\239e7011-d68b-42f7-82eb-8d1b09ba46ea\\scratchpad\\serve-out.js", "C:\\Users\\AL-HUS~1\\AppData\\Local\\Temp\\claude\\D--all-apps-commander-website\\239e7011-d68b-42f7-82eb-8d1b09ba46ea\\scratchpad\\buildcopy\\out", "/commander-group"], "port": 5055, "autoPort": true }
   ]
 }

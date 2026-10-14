@@ -1,9 +1,10 @@
+import { asset } from "@/lib/asset";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import Awards from "@/components/Awards";
 
-export const metadata = { title: "Services | Commander Group" };
+export const metadata = { title: "Services | Commander Group", description: "Import and formulation of agro chemicals, retail with farmer training, and LPG import and distribution across Pakistan." };
 
 const services = [
   { t: "Import & Formulation", d: "Pesticides, Fungicides, Rodenticides, Acaricides and Weedicides, formulated as liquid, powder and granule products.", href: "/companies/commander-agro", img: "/img/commander-agro-03-thumb.jpg" },
@@ -20,9 +21,9 @@ export default function Services() {
           {services.map((s, i) => (
             <Reveal key={s.t} delay={i as 0 | 1 | 2}>
               <Link href={s.href} className="card" style={{ height: "100%" }}>
-                <div className="thumb"><img src={s.img} alt={s.t} loading="lazy" /></div>
+                <div className="thumb"><img src={asset(s.img)} alt={s.t} loading="lazy" /></div>
                 <div className="body">
-                  <h3>{s.t}</h3>
+                  <h2 className="h3s">{s.t}</h2>
                   <p>{s.d}</p>
                   <span className="more">Learn more <span>→</span></span>
                 </div>

@@ -4,7 +4,7 @@ import Awards from "@/components/Awards";
 import { ContactForm } from "@/components/Forms";
 import { site } from "@/content/data";
 
-export const metadata = { title: "Contact Us | Commander Group" };
+export const metadata = { title: "Contact Us | Commander Group", description: "Contact Commander Group at 5A/5B Industrial Estate, Multan: phone, e-mail and enquiry form." };
 
 export default function Contact() {
   return (

@@ -1,51 +1,63 @@
-// Animated hero art: crops growing on one side, LPG tank + pipeline + flame on the other.
+// Lightweight hero art (phones, no-WebGL, reduced motion): a wheat field under attack by pests,
+// a protective spray drone, and a shield that forms over the healthy crop. Pure SVG + CSS, no scripts.
 export default function CropScene() {
-  const stalks = [60, 105, 150, 195, 240];
+  const stalks = [58, 100, 142, 184, 226, 268, 310];
+  const pests = [[92, 150], [170, 118], [250, 140], [130, 96], [296, 112]];
   return (
     <div className="scene" aria-hidden>
       <svg viewBox="0 0 500 500">
         <defs>
-          <radialGradient id="sun" cx="50%" cy="50%" r="50%">
-            <stop offset="0" stopColor="#6fd24a" stopOpacity=".5" /><stop offset="1" stopColor="#6fd24a" stopOpacity="0" />
+          <radialGradient id="cs-sun" cx="50%" cy="55%" r="50%">
+            <stop offset="0" stopColor="#2bc365" stopOpacity=".42" /><stop offset="1" stopColor="#2bc365" stopOpacity="0" />
           </radialGradient>
-          <radialGradient id="fl" cx="50%" cy="70%" r="60%">
-            <stop offset="0" stopColor="#fff2c2" /><stop offset=".5" stopColor="#ff9a3c" /><stop offset="1" stopColor="#ff4d2e" stopOpacity="0" />
-          </radialGradient>
+          <linearGradient id="cs-shield" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#2bc365" stopOpacity=".5" /><stop offset="1" stopColor="#2bc365" stopOpacity="0" />
+          </linearGradient>
         </defs>
-        <circle cx="250" cy="250" r="240" fill="url(#sun)" />
-        <circle cx="250" cy="250" r="200" fill="none" style={{ stroke: "rgba(var(--fg),.08)" }} />
-        <circle cx="250" cy="250" r="150" fill="none" strokeDasharray="3 9" style={{ stroke: "rgba(var(--fg),.1)" }} />
-        <path d="M20 420 H480" style={{ stroke: "rgba(var(--fg),.22)" }} />
+        <circle cx="250" cy="270" r="235" fill="url(#cs-sun)" />
+        <path d="M20 420 H480" style={{ stroke: "rgba(var(--fg),.25)" }} />
+        <path d="M40 430 H460" style={{ stroke: "rgba(var(--fg),.12)" }} strokeDasharray="4 8" />
+
+        {/* protective shield over the crop */}
+        <path className="cs-shield" d="M40 420 C40 190 460 190 460 420" fill="url(#cs-shield)" stroke="#2bc365" strokeWidth="2" strokeDasharray="6 8" />
+
+        {/* wheat: stressed colour fades to healthy as the loop heals */}
         {stalks.map((x, i) => {
-          const top = 180 - (i % 2) * 30;
+          const top = 200 + (i % 3) * 20;
           return (
-            <g key={x} className="sway" style={{ animationDelay: `${i * 0.4}s` }}>
-              <path className="stalk" style={{ animationDelay: `${i * 0.35}s` }} d={`M${x} 420 C${x - 8} 330 ${x + 8} 270 ${x} ${top}`} />
+            <g key={x} className="sway" style={{ animationDelay: `${i * 0.35}s` }}>
+              <path className="stalk" style={{ animationDelay: `${i * 0.3}s` }} d={`M${x} 420 C${x - 8} 340 ${x + 8} 280 ${x} ${top}`} />
               {[0, 1, 2, 3, 4].map((k) => (
                 <g key={k}>
-                  <ellipse className="grain-dot" style={{ animationDelay: `${2 + i * 0.35 + k * 0.12}s` }} cx={x - 7} cy={top + 10 + k * 14} rx="3.4" ry="7" transform={`rotate(-25 ${x - 7} ${top + 10 + k * 14})`} />
-                  <ellipse className="grain-dot" style={{ animationDelay: `${2.1 + i * 0.35 + k * 0.12}s` }} cx={x + 7} cy={top + 16 + k * 14} rx="3.4" ry="7" transform={`rotate(25 ${x + 7} ${top + 16 + k * 14})`} />
+                  <ellipse className="grain-dot" style={{ animationDelay: `${1.8 + i * 0.3 + k * 0.1}s` }} cx={x - 7} cy={top + 8 + k * 14} rx="3.4" ry="7" transform={`rotate(-25 ${x - 7} ${top + 8 + k * 14})`} />
+                  <ellipse className="grain-dot" style={{ animationDelay: `${1.9 + i * 0.3 + k * 0.1}s` }} cx={x + 7} cy={top + 14 + k * 14} rx="3.4" ry="7" transform={`rotate(25 ${x + 7} ${top + 14 + k * 14})`} />
                 </g>
               ))}
             </g>
           );
         })}
-        <g>
-          <rect x="300" y="330" width="150" height="90" rx="45" fill="rgba(85,96,255,.16)" stroke="#5560ff" strokeWidth="2" />
-          <path d="M325 345 V405 M375 335 V415 M425 345 V405" stroke="rgba(85,96,255,.35)" />
-          <path className="flow" d="M375 330 V270 H440 V215" />
-          <g className="flame" transform="translate(440 160)">
-            <path d="M0 55 C-26 38 -20 8 0 -22 C4 4 26 18 20 40 C18 50 8 56 0 55Z" fill="url(#fl)" />
-            <path d="M0 52 C-10 42 -8 28 0 14 C6 28 12 38 6 48Z" fill="#fff6d6" opacity=".9" />
+
+        {/* pests that dissolve when the spray arrives */}
+        {pests.map(([x, y], i) => (
+          <g key={i} className="cs-pest" style={{ animationDelay: `${i * 0.5}s`, transformOrigin: `${x}px ${y}px` }}>
+            <circle cx={x} cy={y} r="6" fill="#d6303a" />
+            <path d={`M${x - 5} ${y - 3} l-7 -5 M${x + 5} ${y - 3} l7 -5`} stroke="#d6303a" strokeWidth="2" strokeLinecap="round" />
           </g>
+        ))}
+
+        {/* spray drone with mist */}
+        <g className="cs-drone">
+          <rect x="378" y="86" width="64" height="12" rx="5" fill="#e8edf5" />
+          <rect x="366" y="82" width="88" height="3" rx="1.5" style={{ fill: "rgba(var(--fg),.5)" }} />
+          <circle cx="410" cy="106" r="7" fill="#2bc365" />
+          {[0, 1, 2, 3, 4, 5].map((k) => (
+            <circle key={k} className="cs-mist" cx={394 + k * 7} cy="118" r="2.6" fill="#7ff0b0" style={{ animationDelay: `${k * 0.22}s` }} />
+          ))}
         </g>
-        <circle cx="250" cy="250" r="3" fill="#6fd24a">
-          <animate attributeName="r" values="3;9;3" dur="3s" repeatCount="indefinite" />
-        </circle>
       </svg>
       <div className="float-chip" style={{ top: "10%", left: "2%" }}><b>ISO 17025</b> R&amp;D certified</div>
-      <div className="float-chip" style={{ bottom: "8%", left: "4%", animationDelay: "-2s" }}><b>50</b> territorial offices</div>
-      <div className="float-chip" style={{ top: "30%", right: "0", animationDelay: "-4s" }}><b>300 MT</b> LPG / day</div>
+      <div className="float-chip" style={{ bottom: "7%", left: "4%", animationDelay: "-2s" }}><b>50</b> territorial offices</div>
+      <div className="float-chip" style={{ top: "30%", right: "0", animationDelay: "-4s" }}><b>Crop</b> protection</div>
     </div>
   );
 }

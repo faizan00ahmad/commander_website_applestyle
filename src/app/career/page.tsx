@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 import Awards from "@/components/Awards";
 import { CareerForm } from "@/components/Forms";
 
-export const metadata = { title: "Career | Commander Group" };
+export const metadata = { title: "Career | Commander Group", description: "Apply online for a career at Commander Group, Multan." };
 
 export default function Career() {
   return (

@@ -1,9 +1,10 @@
+import { asset } from "@/lib/asset";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import Awards from "@/components/Awards";
 import { mission, vision } from "@/content/data";
 
-export const metadata = { title: "About Us | Commander Group" };
+export const metadata = { title: "About Us | Commander Group", description: "The vision and mission of Commander Group: a customer-oriented, quality-driven group in agro chemicals, seeds and petrogas." };
 
 export default function About() {
   return (
@@ -14,10 +15,10 @@ export default function About() {
           <Reveal>
             <div className="vm">
               <div className="eyebrow">Our Vision</div>
-              <h3>Our Vision</h3>
+              <h2 className="h3s">Our Vision</h2>
               <p className="muted" style={{ marginTop: 14 }}>{vision}</p>
             </div>
-            <img src="/img/about-3-1.png" alt="Commander Group" style={{ marginTop: 20, borderRadius: 20 }} />
+            <img src={asset("/img/about-3-1.png")} alt="Commander Group" style={{ marginTop: 20, borderRadius: 20 }} />
           </Reveal>
           <Reveal delay={1}>
             <div className="eyebrow">Our Mission</div>

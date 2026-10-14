@@ -1,7 +1,11 @@
+import { asset } from "@/lib/asset";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
-import CropScene from "@/components/CropScene";
+import HeroVisual from "@/components/motion/HeroVisual";
+import SproutText from "@/components/motion/SproutText";
+import ProductMarquee from "@/components/motion/ProductMarquee";
+import CompanyTimeline from "@/components/motion/CompanyTimeline";
 import CorporateTabs from "@/components/CorporateTabs";
 import Awards from "@/components/Awards";
 import { chairman, companies, stats } from "@/content/data";
@@ -22,9 +26,7 @@ export default function Home() {
         <div className="container hero-grid">
           <div>
             <div className="pill"><b /> Commander Group · Multan, Pakistan · Since 1996</div>
-            <h1>
-              Quality <span className="grad">within your reach</span>
-            </h1>
+            <SproutText as="h1" text="Quality within your reach" accent={["your","reach"]} waitIntro />
             <p className="lead">
               A diversified group growing across agro chemicals, seeds and petrogas, built on commitment, integrity and excellence for more than 25 years.
             </p>
@@ -33,7 +35,7 @@ export default function Home() {
               <Link href="/career" className="btn">Career</Link>
             </div>
           </div>
-          <CropScene />
+          <HeroVisual />
         </div>
       </section>
 
@@ -63,7 +65,7 @@ export default function Home() {
           <Reveal>
             <div className="sec-head">
               <div className="eyebrow">Our Businesses</div>
-              <h2>One group. <span className="grad">Many sectors.</span></h2>
+              <SproutText text="One group. Many sectors." accent={["Many","sectors"]} />
             </div>
           </Reveal>
           <div className="cards">
@@ -71,7 +73,7 @@ export default function Home() {
               <Reveal key={c.slug} delay={((i % 3) as 0 | 1 | 2)}>
                 <Link href={`/companies/${c.slug}`} className="card" style={{ height: "100%" }}>
                   {c.comingSoon && <span className="soon">Coming soon</span>}
-                  <div className="thumb"><img src={c.cover} alt={c.name} loading="lazy" /></div>
+                  <div className="thumb"><img src={asset(c.cover)} alt={c.name} loading="lazy" /></div>
                   <div className="body">
                     <span className="tag">{c.sector}</span>
                     <h3>{c.name}</h3>
@@ -85,12 +87,24 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section pm-section">
+        <div className="container">
+          <Reveal>
+            <div className="sec-head">
+              <div className="eyebrow">Our Products</div>
+              <SproutText text="Seen in the fields of Pakistan" accent={["fields"]} />
+            </div>
+          </Reveal>
+        </div>
+        <ProductMarquee />
+      </section>
+
       <section className="section" style={{ paddingTop: 20 }}>
         <div className="container">
           <Reveal>
             <div className="sec-head">
               <div className="eyebrow">Why Commander</div>
-              <h2>Built for <span className="grad">quality at scale</span></h2>
+              <SproutText text="Built for quality at scale" accent={["quality","scale"]} />
             </div>
           </Reveal>
           <div className="pillars">
@@ -107,11 +121,13 @@ export default function Home() {
         </div>
       </section>
 
+      <CompanyTimeline />
+
       <section className="section">
         <div className="container split">
           <Reveal>
             <div className="eyebrow">Corporate Details</div>
-            <h2>Agro Chemicals, Seeds, <span className="grad">Petrogas</span></h2>
+            <SproutText text="Agro Chemicals, Seeds, Petrogas" accent={["Petrogas"]} />
             <p className="lead" style={{ marginTop: 20 }}>
               From formulation plants and R&amp;D to LPG storage and distribution, every business in the group follows one standard of quality.
             </p>
@@ -124,7 +140,7 @@ export default function Home() {
         <div className="container">
           <Reveal>
             <div className="chair">
-              <img className="portrait" src="/img/ceo.gif" alt={chairman.name} />
+              <img className="portrait" src={asset("/img/ceo.gif")} alt={chairman.name} />
               <div>
                 <div className="eyebrow">Message from the Chairman</div>
                 <blockquote>{chairman.excerpt}</blockquote>
@@ -143,7 +159,7 @@ export default function Home() {
           <Reveal>
             <div className="cta">
               <div className="eyebrow" style={{ justifyContent: "center" }}>Career</div>
-              <h2>Grow with <span className="grad">Commander</span></h2>
+              <SproutText text="Grow with Commander" accent={["Commander"]} />
               <p className="lead">Join a team that is moving forward into an era of growth and opportunity.</p>
               <Link href="/career" className="btn primary">Apply Online →</Link>
             </div>

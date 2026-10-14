@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 import Awards from "@/components/Awards";
 import { distributors } from "@/content/data";
 
-export const metadata = { title: "Distributor List | Commander Group" };
+export const metadata = { title: "Distributor List | Commander Group", description: "Authorized Commander Petrogas LPG distributors in Multan with contact numbers." };
 
 export default function Distributors() {
   return (

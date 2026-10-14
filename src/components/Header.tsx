@@ -1,4 +1,5 @@
 "use client";
+import { asset } from "@/lib/asset";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -13,7 +14,7 @@ export default function Header() {
     <header className="header">
       <div className="header-inner">
         <Link href="/" aria-label="Commander Group home">
-          <span className="logo-chip"><img src="/img/commander-logo.png" alt="Commander Group" /></span>
+          <span className="logo-chip"><img src={asset("/img/commander-logo.png")} alt="Commander Group" /></span>
         </Link>
         <nav className={`nav ${open ? "open" : ""}`}>
           {nav.map((n) =>

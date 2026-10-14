@@ -35,7 +35,7 @@ export function CareerForm() {
   const { sent, submit } = useMail("Job application");
   return (
     <form className="form" onSubmit={submit}>
-      <h3>Personal Info</h3>
+      <h2 className="form-sec">Personal Info</h2>
       <div className="row">
         <label>Name of Candidate *<input name="Name" required /></label>
         <label>Email Address *<input name="Email" type="email" required /></label>
@@ -44,7 +44,7 @@ export function CareerForm() {
         <label>Contact Number *<input name="Phone" required /></label>
         <label>Applying for the job of *<input name="Position" required /></label>
       </div>
-      <h3>Qualification</h3>
+      <h2 className="form-sec">Qualification</h2>
       <div className="row">
         <label>Recent / Last Qualification *<input name="Qualification" required /></label>
         <label>Majors *<input name="Majors" required /></label>
@@ -53,7 +53,7 @@ export function CareerForm() {
         <label>Institute<input name="Institute" /></label>
         <label>Passing Year<input name="Passing Year" /></label>
       </div>
-      <h3>Experience</h3>
+      <h2 className="form-sec">Experience</h2>
       <label>Tell us About Yourself<textarea name="About" /></label>
       <div><button className="btn primary" type="submit">Send Message! →</button></div>
       {sent && <div className="sent">Opening your email app to send the application…</div>}

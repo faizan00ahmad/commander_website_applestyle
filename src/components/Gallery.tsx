@@ -1,4 +1,5 @@
 "use client";
+import { asset } from "@/lib/asset";
 import { useEffect, useState } from "react";
 
 export default function Gallery({ images, alt }: { images: string[]; alt: string }) {
@@ -11,16 +12,24 @@ export default function Gallery({ images, alt }: { images: string[]; alt: string
       if (e.key === "ArrowLeft") setI((x) => (x! - 1 + images.length) % images.length);
     };
     addEventListener("keydown", k);
+    return () => removeEventListener("keydown", k);
+  }, [i, images.length]);
+
+  // Freeze page scrolling (native and smooth-scroll) while the viewer is open.
+  const open = i !== null;
+  useEffect(() => {
+    if (!open) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    return () => { removeEventListener("keydown", k); document.body.style.overflow = prev; };
-  }, [i, images.length]);
+    window.__lenis?.stop();
+    return () => { document.body.style.overflow = prev; window.__lenis?.start(); };
+  }, [open]);
   return (
     <>
       <div className="gallery">
         {images.map((s, n) => (
           <button key={s} onClick={() => setI(n)} aria-label={`Open ${alt} ${n + 1}`}>
-            <img src={s} alt={`${alt} ${n + 1}`} loading="lazy" />
+            <img src={asset(s)} alt={`${alt} ${n + 1}`} loading="lazy" />
           </button>
         ))}
       </div>
@@ -28,7 +37,7 @@ export default function Gallery({ images, alt }: { images: string[]; alt: string
         <div className="lightbox" onClick={() => setI(null)}>
           <button className="x" aria-label="Close">✕</button>
           <button className="p" aria-label="Previous" onClick={(e) => { e.stopPropagation(); setI((i - 1 + images.length) % images.length); }}>‹</button>
-          <img src={images[i].replace("-thumb", "")} onError={(e) => { e.currentTarget.src = images[i]; }} alt={`${alt} ${i + 1}`} onClick={(e) => e.stopPropagation()} />
+          <img src={asset(images[i].replace("-thumb", ""))} onError={(e) => { e.currentTarget.src = asset(images[i]); }} alt={`${alt} ${i + 1}`} onClick={(e) => e.stopPropagation()} />
           <button className="n" aria-label="Next" onClick={(e) => { e.stopPropagation(); setI((i + 1) % images.length); }}>›</button>
         </div>
       )}
