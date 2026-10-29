@@ -22,20 +22,18 @@ const pillars = [
 export default function Home() {
   return (
     <>
-      <section className="hero">
-        <div className="container hero-grid">
-          <div>
-            <div className="pill"><b /> Commander Group · Multan, Pakistan · Since 1996</div>
-            <SproutText as="h1" text="Quality within your reach" accent={["your","reach"]} waitIntro />
-            <p className="lead">
-              A diversified group growing across agro chemicals, seeds and petrogas, built on commitment, integrity and excellence for more than 25 years.
-            </p>
-            <div className="hero-actions">
-              <Link href="#businesses" className="btn primary">Our Businesses →</Link>
-              <Link href="/career" className="btn">Career</Link>
-            </div>
+      <section className="hero hero-video-section">
+        <HeroVisual />
+        <div className="container hero-content">
+          <div className="pill"><b /> Commander Group · Multan, Pakistan · Since 1996</div>
+          <SproutText as="h1" text="Quality within your reach" accent={["your","reach"]} waitIntro />
+          <p className="lead">
+            A diversified group growing across agro chemicals, seeds and petrogas, built on commitment, integrity and excellence for more than 25 years.
+          </p>
+          <div className="hero-actions">
+            <Link href="#businesses" className="btn primary">Our Businesses →</Link>
+            <Link href="/career" className="btn">Career</Link>
           </div>
-          <HeroVisual />
         </div>
       </section>
 
