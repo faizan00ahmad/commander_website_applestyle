@@ -1,13 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { asset } from "@/lib/asset";
 
 export default function HeroVisual() {
-  const ref = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -18,7 +14,7 @@ export default function HeroVisual() {
   }, []);
 
   return (
-    <motion.div ref={ref} className="hero-video-wrap" style={{ opacity }}>
+    <div className="hero-video-wrap">
       <div className={`hero-video-zoom${loaded ? " zooming" : ""}`}>
         <video
           ref={videoRef}
@@ -32,7 +28,7 @@ export default function HeroVisual() {
           onLoadedData={() => setLoaded(true)}
         />
       </div>
-      <div className="hero-video-overlay" />
-    </motion.div>
+      <div className="hero-overlay" />
+    </div>
   );
 }

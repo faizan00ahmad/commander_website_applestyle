@@ -1,44 +1,44 @@
-import { asset } from "@/lib/asset";
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 import { companies, site } from "@/content/data";
-import FooterWordmark from "./motion/FooterWordmark";
-
-const links: [string, string][] = [
-  ["Home", "/"], ["About Us", "/about"], ["Chairman Message", "/chairman"],
-  ["Services", "/services"], ["Distributor", "/distributors"], ["Career", "/career"], ["Contact", "/contact"],
-];
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="foot-grid">
-          <div>
-          <span className="logo-chip"><img src={asset("/img/commander-logo.png")} alt="Commander Group" /></span>
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <img src={asset("/img/commander-logo.png")} alt="Commander Group" />
             <p>Quality within your reach. Serving Pakistan since {site.founded}.</p>
-            <div className="socials">
-              <a href={site.facebook} target="_blank" rel="noreferrer">Facebook</a>
-              <a href={site.instagram} target="_blank" rel="noreferrer">Instagram</a>
-            </div>
           </div>
           <div>
-            <h3>Links</h3>
-            <ul>{links.map(([l, h]) => <li key={h}><Link href={h}>{l}</Link></li>)}</ul>
+            <h4>Quick Links</h4>
+            <ul>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/about">About</Link></li>
+              <li><Link href="/leadership">Leadership</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
+            </ul>
           </div>
           <div>
-            <h3>Companies</h3>
-            <ul>{companies.map((c) => <li key={c.slug}><Link href={`/companies/${c.slug}`}>{c.name}</Link></li>)}</ul>
+            <h4>Companies</h4>
+            <ul>
+              {companies.map((c) => (
+                <li key={c.slug}><Link href={`/companies/${c.slug}`}>{c.short}</Link></li>
+              ))}
+            </ul>
           </div>
           <div>
-            <h3>Head Office</h3>
-            <p>{site.address}</p>
-            <p style={{ marginTop: 10 }}>{site.phones[0]}</p>
-            <p>{site.emails[0]}</p>
+            <h4>Head Office</h4>
+            <ul>
+              <li><span style={{ fontSize: 14, color: "var(--fg-dim)" }}>{site.address}</span></li>
+              <li><span style={{ fontSize: 14, color: "var(--fg-dim)" }}>{site.phones[0]}</span></li>
+              <li><span style={{ fontSize: 14, color: "var(--fg-dim)" }}>{site.emails[0]}</span></li>
+            </ul>
           </div>
         </div>
-        <FooterWordmark />
-        <div className="foot-bottom">
-          <span>© Copyright Commander 2020. All right reserved.</span>
+        <div className="footer-bottom">
+          <span>&copy; {new Date().getFullYear()} Commander Group. All rights reserved.</span>
           <span>Created by Edusoft System Solutions</span>
         </div>
       </div>
