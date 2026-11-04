@@ -9,7 +9,7 @@ export default function Reveal({ children, delay = 0, className = "" }: { childr
     if (!el) return;
     const io = new IntersectionObserver(([e]) => {
       if (e.isIntersecting) { setShown(true); io.disconnect(); }
-    }, { threshold: 0.12 });
+    }, { threshold: 0.01, rootMargin: "0px 0px 80px 0px" });
     io.observe(el);
     return () => io.disconnect();
   }, []);

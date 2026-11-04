@@ -3,8 +3,10 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Counter({ value, suffix = "", plain = false }: { value: number; suffix?: string; plain?: boolean }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [n, setN] = useState(0);
+  const isYear = value > 1900 && value < 2100;
+  const [n, setN] = useState(isYear ? value : 0);
   useEffect(() => {
+    if (isYear) return;
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(([e]) => {
@@ -21,6 +23,6 @@ export default function Counter({ value, suffix = "", plain = false }: { value: 
     }, { threshold: 0.1 });
     io.observe(el);
     return () => io.disconnect();
-  }, [value]);
+  }, [value, isYear]);
   return <span ref={ref}>{plain ? n : n.toLocaleString("en-US")}{suffix}</span>;
 }

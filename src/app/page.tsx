@@ -30,20 +30,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Stats Ticker ── */}
+      {/* ── Stats Bar ── */}
       <div className="stats-bar">
-        <div className="stats-ticker">
-          <div className="stats-ticker-track">
-            {[...stats, ...stats].map((s, i) => (
-              <React.Fragment key={`${s.label}-${i}`}>
-                <span className="stats-ticker-divider" />
-                <div className="stats-ticker-item">
-                  <span className="stat-value"><Counter value={s.value} suffix={s.suffix} plain={s.plain} /></span>
-                  <span className="stat-label">{s.label}</span>
-                </div>
-              </React.Fragment>
-            ))}
-          </div>
+        <div className="stats-grid-home">
+          {stats.map((s) => (
+            <Reveal key={s.label}>
+              <div className="stat-block-home">
+                <span className="stat-value-home"><Counter value={s.value} suffix={s.suffix} plain={s.plain} /></span>
+                <span className="stat-label-home">{s.label}</span>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
 
@@ -192,8 +189,8 @@ export default function Home() {
         </div>
         <div className="phone-marquee">
           <div className="phone-track">
-            {[...videoTestimonials, ...videoTestimonials].map((v, i) => (
-              <div className="phone-mockup" key={`${v.id}-${i}`}>
+            {videoTestimonials.map((v) => (
+              <div className="phone-mockup" key={v.id}>
                 <div className="phone-frame">
                   <div className="phone-notch" />
                   <div className="phone-screen">
