@@ -17,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}` }} />
       </head>
       <body>
+        <div className="ambient-mesh" />
         <a className="sr-only" href="#main">Skip to content</a>
         <Header />
         <main id="main">{children}</main>
