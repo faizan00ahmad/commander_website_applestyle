@@ -205,35 +205,43 @@ export const mission = [
 ];
 
 export const chairman = {
-  name: "Mr. Rafique",
-  role: "Chairman, Commander Group",
+  name: "Late Mr. Rafique",
+  role: "Chairman | Commander Group",
+  memorial: "In Loving Memory of Late Mr. Rafique",
+  memorialNote:
+    "The following message reflects the vision, values, and enduring legacy of our respected Chairman, Late Mr. Rafique, whose leadership laid the foundation for Commander Group’s continued success.",
   excerpt:
-    "First of all I myself and all the people working at COMMANDER GROUP are highly obliged and grateful to Almighty ALLAH for the success and blessings bestowed on us since its establishment in 1996.",
+    "With profound gratitude to Almighty Allah, I reflect on the journey of Commander Group since its establishment in 1996. What began with a clear vision and a determination to serve has grown into a diversified group of businesses, built on the enduring values of integrity, commitment and excellence.",
   letter: [
-    "First of all I myself and all the people working at COMMANDER GROUP are highly obliged and grateful to Almighty ALLAH for the success and blessings bestowed on us since its establishment in 1996. I cannot help but regard with wonder the events that have transpired over 25 years of my association with this Group. Our Corporate Profile is much stronger today than ever in our past. We do more for our clients than ever in our past. Today, we are better positioned to take advantage of the opportunities ahead of us than ever in our past. I am tremendously proud and privileged to serve as the Chairman of this Group. We embrace a strong foundation of commitment, integrity and excellence and are moving forward into an era of growth and opportunity by looking into the future where obstacles and challenges awaits us.",
-    "Our dedication to innovate supports our commitment to be the partner of choice for our clients in all the diversified sectors in which COMMANDER Group is working. It is our goal to be adaptable, be responsive and accountable to our clients to meet their excessive needs. To do so, we will combine our professional skills, our diversity, our team-driven yet practical approach and our relentless pursuit of business objectives with a well-driven knowledge of today's industry. As we look ahead, we want to achieve more trust; a mandatory imperative of business on which our Group foundation is entrusted upon. This is our pledge to our customers and we will honour it. INSHA ALLAH.",
+    "With profound gratitude to Almighty Allah, I reflect on the journey of Commander Group since its establishment in 1996. What began with a clear vision and a determination to serve has grown into a diversified group of businesses, built on the enduring values of integrity, commitment and excellence. Every milestone reflects the dedication of our people, the confidence of our customers and partners, and the trust placed in us over the years.",
+    "Our progress is measured not simply by the scale of our operations, but by the value we create and the relationships we sustain. Across agriculture, seeds and energy, we remain focused on understanding evolving customer needs, delivering dependable solutions and raising the standards by which we operate. We recognize that lasting success must be earned every day through responsible decisions, consistent performance and an unwavering commitment to quality.",
+    "As industries evolve and new opportunities emerge, we are determined to move forward with ambition and discipline. We will continue to invest in our people, embrace meaningful innovation, strengthen operational excellence and build partnerships founded on transparency and mutual respect. Challenges will inevitably arise, but our shared purpose and collective capabilities give us confidence in the future.",
+    "Above all, trust remains the foundation of Commander Group. To our customers, business partners, employees and stakeholders, I reaffirm our commitment to act with integrity, honor our responsibilities and pursue sustainable growth that creates lasting value. With the blessings of Almighty Allah, we look forward to the next chapter of progress and shared success. Insha’Allah.",
   ],
-  regards: "With Warm Regards,",
-  signer: "Choudhry Usman Rafique",
-  signerRole: "CEO Commander Petrogas Pvt Ltd",
+  regards: "With warm regards,",
+  signer: "Late Mr. Rafique",
+  signerRole: "",
   bios: [
     {
       name: "Choudhry Usman Rafique",
-      role: "CEO, Commander Petrogas (Pvt) Ltd.",
+      role: "Chief Executive Officer | Commander Petrogas (Pvt.) Ltd.",
       image: "/img/ceo.gif",
       paras: [
-        "Choudhry Usman Rafique is a results-driven professional with over 20 years of extensive experience in the pesticides and petrochemical industries. As a forward-thinking leader, he has consistently demonstrated success in fostering innovation and championing the early adoption of emerging technologies.",
-        "He holds a Bachelor's degree in Business and Information Technology from a reputable university in Australia, and further advanced his academic credentials with a Master's degree from a highly ranked university in England.",
-        "As CEO of Commander Petrogas (Pvt.) Ltd., he continues to focus on enhancing team performance, nurturing a positive corporate culture, and steering the company toward sustainable growth and innovation.",
+        "At Commander Petrogas, our ambition is to build an organization recognized for reliability, forward-thinking leadership and lasting customer relationships. In a rapidly changing business environment, success depends on our ability to anticipate market needs, respond decisively and consistently deliver on our commitments.",
+        "With more than two decades of experience across the pesticides and petrochemical industries, I have seen firsthand how innovation, disciplined execution and the early adoption of relevant technologies can transform businesses. My academic background in Business and Information Technology, including undergraduate studies in Australia and postgraduate studies in England, has further shaped my belief in combining sound business judgment with modern systems and data-driven decision-making.",
+        "Our priorities are clear: operational excellence, a strong culture of accountability, the continuous development of our people and an unwavering focus on customer confidence. I believe that high-performing teams are built through open communication, mutual respect and a shared commitment to measurable results.",
+        "As we advance, we will remain focused on strengthening our capabilities, pursuing responsible growth and creating enduring value for our customers, employees and stakeholders. Together, we aim to shape a resilient, innovative and trusted future for Commander Petrogas.",
       ],
     },
     {
       name: "Mrs. Samina Rafique",
-      role: "Director",
+      role: "Director | Commander Petrogas (Pvt.) Ltd.",
       image: "/img/ceo.gif",
       paras: [
-        "Mrs. Samina Rafique is a distinguished philanthropist and a dedicated member of several leading national and international non-governmental organizations. She holds a Bachelor's degree from a prestigious foreign university and brings over a decade of experience in management and social development.",
-        "She currently serves as the Director of Commander Petrogas (Pvt.) Ltd., where she plays a pivotal role in strategic planning and corporate governance.",
+        "Mrs. Samina Rafique brings a thoughtful combination of corporate leadership, management experience and a longstanding commitment to social responsibility to her role as Director of Commander Petrogas (Pvt.) Ltd.",
+        "A graduate of an overseas university, she has more than a decade of experience in management and social development. Her involvement with national and international non-governmental organizations reflects a sustained dedication to community welfare, with particular interests in education, healthcare and women’s empowerment.",
+        "Her approach to leadership is grounded in the belief that sound governance and responsible business practices are essential to long-term organizational success. At Commander Petrogas, she contributes to strategic planning and corporate governance, supporting the company’s commitment to accountability, sustainable progress and stakeholder confidence.",
+        "Through her professional and philanthropic endeavors, Mrs. Rafique continues to champion a vision of leadership that connects business performance with positive and meaningful social impact.",
       ],
     },
   ],

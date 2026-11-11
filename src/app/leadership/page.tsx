@@ -50,9 +50,15 @@ export default function LeadershipPage() {
                 <img src={asset("/img/ceo.gif")} alt={chairman.name} />
               </div>
               <div className="leader-featured-text">
-                <p className="intro-eyebrow">Chairman&apos;s Message</p>
+                <p className="intro-eyebrow">A Message from Our Late Chairman</p>
                 <h2>{chairman.name}</h2>
                 <p className="leader-role">{chairman.role}</p>
+                {chairman.memorial && (
+                  <p style={{ fontStyle: "italic", color: "var(--fg-dim)", marginBottom: 8 }}>{chairman.memorial}</p>
+                )}
+                {chairman.memorialNote && (
+                  <p style={{ fontSize: 15, color: "var(--fg-dim)", lineHeight: 1.7, marginBottom: 16 }}>{chairman.memorialNote}</p>
+                )}
                 {chairman.letter.map((p, i) => (
                   <p key={i} className="leader-para">{p}</p>
                 ))}
