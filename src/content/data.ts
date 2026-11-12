@@ -15,7 +15,7 @@ export const site = {
 export const nav = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Companies", href: "#", children: true },
+  { label: "Companies", href: "/companies", children: true },
   { label: "Leadership", href: "/leadership" },
   { label: "Contact", href: "/contact" },
 ];
@@ -50,7 +50,7 @@ export const companies: Company[] = [
     short: "Commander Agro",
     sector: "Agro Chemicals",
     theme: "agro",
-    logo: "/img/commander-agro-logo.png",
+    logo: "/img/commander-agro-logo-new.webp",
     cover: "/img/commander-agro-02.jpg",
     description: [
       "Pakistan's leading importer and formulator of crop-protection chemicals — Pesticides, Fungicides, Rodenticides, Acaricides and Weedicides — trusted by thousands of farmers since 1996.",
@@ -75,7 +75,7 @@ export const companies: Company[] = [
     short: "Gharbeen",
     sector: "Agro Chemicals · Retail",
     theme: "gharbeen",
-    logo: "/img/gharbeen-logo.png",
+    logo: "/img/gharbeen-logo-new.webp",
     cover: "/img/Armata.jpg",
     description: [
       "Our flagship retail brand, launched in 2011, brings premium branded formulations with distinctive active ingredients directly to Pakistan's farming communities.",
@@ -100,7 +100,7 @@ export const companies: Company[] = [
     short: "Gharbeen Seeds",
     sector: "Seeds · Agriculture",
     theme: "seeds",
-    logo: "/img/service-1-4.jpg",
+    logo: "/img/gharbeen-seeds-logo.webp",
     cover: "/img/commander-agro-04.jpg",
     description: [
       "A dedicated seed division providing certified, high-yield varieties for Pakistan's most important crops — wheat, cotton, rice, and maize.",
@@ -149,7 +149,7 @@ export const companies: Company[] = [
     short: "Commander Petrogas",
     sector: "Energy · LPG",
     theme: "petrogas",
-    logo: "/img/petrogas-logo.png",
+    logo: "/img/petrogas-logo-new.webp",
     cover: "/img/petrogas.jpg",
     description: [
       "Pakistan's premier LPG import and distribution company — supplying clean, reliable energy to homes and businesses nationwide since 2017.",
@@ -175,7 +175,7 @@ export const companies: Company[] = [
     short: "Rafco Energy",
     sector: "Energy Infrastructure",
     theme: "energy",
-    logo: "/img/service-1-5.jpg",
+    logo: "/img/rafco-energy-logo.webp",
     cover: "/img/petrogas-05.jpg",
     description: [
       "The energy-infrastructure arm of Commander Group, building the backbone of Pakistan's growing energy ecosystem.",
@@ -242,6 +242,17 @@ export const chairman = {
         "A graduate of an overseas university, she has more than a decade of experience in management and social development. Her involvement with national and international non-governmental organizations reflects a sustained dedication to community welfare, with particular interests in education, healthcare and women’s empowerment.",
         "Her approach to leadership is grounded in the belief that sound governance and responsible business practices are essential to long-term organizational success. At Commander Petrogas, she contributes to strategic planning and corporate governance, supporting the company’s commitment to accountability, sustainable progress and stakeholder confidence.",
         "Through her professional and philanthropic endeavors, Mrs. Rafique continues to champion a vision of leadership that connects business performance with positive and meaningful social impact.",
+      ],
+    },
+    {
+      name: "Mrs. Zoya Usman",
+      role: "Director | Commander Petrogas (Pvt.) Ltd.",
+      image: "/img/ceo.gif",
+      paras: [
+        "At Commander Petrogas, we believe that lasting success is built on a clear vision, the confidence of our customers, and an unwavering commitment to safety, quality, and service. As we look toward the future, our aspiration is to take the strength of our existing operations beyond the plant and closer to the communities and businesses we serve.",
+        "A key part of this vision is the planned expansion of our retail presence through a network of Commander Petrogas-branded LPG outlets and distribution points, developed in phases as market opportunities, regulatory approvals, and operational readiness allow. We envision modern, accessible facilities that uphold rigorous safety standards, deliver dependable service, and make quality energy solutions more convenient for households, commercial customers, and industry.",
+        "Our growth strategy will be guided by responsible investment, capable teams, strong partnerships, and the adoption of efficient technologies. Each step forward will reflect our commitment to customer trust, regulatory compliance, environmental responsibility, and sustainable long-term value.",
+        "I am confident that, with the dedication of our people and the continued support of our stakeholders, Commander Petrogas can establish a stronger market presence and contribute meaningfully to Pakistan’s evolving energy needs. Together, we aim to turn this vision into a legacy of progress, reliability, and shared prosperity.",
       ],
     },
   ],

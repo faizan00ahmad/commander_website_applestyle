@@ -29,10 +29,10 @@ export default function Header() {
           <Link href="/" onClick={() => setOpen(false)}>Home</Link>
           <Link href="/about" onClick={() => setOpen(false)}>About</Link>
           <div className="dd">
-            <a href="#">Companies</a>
+            <Link href="/companies" onClick={() => setOpen(false)}>Companies</Link>
             <div className="dd-menu">
               {companies.map((c) => (
-                <Link key={c.slug} href={`/companies/${c.slug}`} onClick={() => setOpen(false)}>{c.short}</Link>
+                <Link key={c.slug} href={`/companies/${c.slug}`} data-company={c.slug} onClick={() => setOpen(false)}>{c.short}</Link>
               ))}
             </div>
           </div>

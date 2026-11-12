@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import { companies } from "@/content/data";
+import { gharbeenBottles, gharbeenSachets } from "@/content/gharbeen-products";
+import { commanderAgroBags } from "@/content/commander-agro-products";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -87,8 +89,8 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      {/* ── Products Grid ── */}
-      {co.products.length > 0 && (
+      {/* ── Products Grid (companies without dedicated catalogue) ── */}
+      {co.slug !== "gharbeen" && co.slug !== "commander-agro" && co.products.length > 0 && (
         <section className="inner-section inner-section--alt">
           <div className="container">
             <Reveal>
@@ -108,6 +110,83 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                   </div>
                 </Reveal>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Product Catalogue Links (Gharbeen only) ── */}
+      {co.slug === "gharbeen" && (
+        <section className="inner-section inner-section--alt">
+          <div className="container">
+            <Reveal>
+              <div style={{ textAlign: "center", marginBottom: 48 }}>
+                <p className="intro-eyebrow">Products &amp; Services</p>
+                <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, letterSpacing: "-0.02em" }}>Product Catalogue</h2>
+              </div>
+            </Reveal>
+            <div className="catalogue-links">
+              <Reveal>
+                <Link href="/companies/gharbeen/bottles" className="catalogue-link-card">
+                  <div className="catalogue-link-imgs">
+                    <img src={asset("/img/gharbeen-bottles/armata.webp")} alt="Armata" loading="lazy" />
+                    <img src={asset("/img/gharbeen-bottles/flanker.webp")} alt="Flanker" loading="lazy" />
+                    <img src={asset("/img/gharbeen-bottles/rommel.webp")} alt="Rommel" loading="lazy" />
+                  </div>
+                  <div className="catalogue-link-info">
+                    <h3>Bottles</h3>
+                    <p>Liquid formulations — EC, SC, SL &amp; OD — for crop protection and nutrition.</p>
+                    <span className="catalogue-link-count">{gharbeenBottles.length} Products</span>
+                    <span className="catalogue-link-arrow">&rarr;</span>
+                  </div>
+                </Link>
+              </Reveal>
+              <Reveal>
+                <Link href="/companies/gharbeen/sachets" className="catalogue-link-card">
+                  <div className="catalogue-link-imgs">
+                    <img src={asset("/img/gharbeen-sachets/aragon.webp")} alt="Aragon" loading="lazy" />
+                    <img src={asset("/img/gharbeen-sachets/kulver.webp")} alt="Kulver" loading="lazy" />
+                    <img src={asset("/img/gharbeen-sachets/fleming.webp")} alt="Fleming" loading="lazy" />
+                  </div>
+                  <div className="catalogue-link-info">
+                    <h3>Sachets</h3>
+                    <p>Dry formulations — WP, WG, SP &amp; GR — for broad-spectrum pest and disease management.</p>
+                    <span className="catalogue-link-count">{gharbeenSachets.length} Products</span>
+                    <span className="catalogue-link-arrow">&rarr;</span>
+                  </div>
+                </Link>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Product Catalogue Links (Commander Agro only) ── */}
+      {co.slug === "commander-agro" && (
+        <section className="inner-section inner-section--alt">
+          <div className="container">
+            <Reveal>
+              <div style={{ textAlign: "center", marginBottom: 48 }}>
+                <p className="intro-eyebrow">Products &amp; Services</p>
+                <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, letterSpacing: "-0.02em" }}>Product Catalogue</h2>
+              </div>
+            </Reveal>
+            <div className="catalogue-links">
+              <Reveal>
+                <Link href="/companies/commander-agro/bags" className="catalogue-link-card">
+                  <div className="catalogue-link-imgs">
+                    <img src={asset("/img/commander-agro-bags/azler.webp")} alt="Azler" loading="lazy" />
+                    <img src={asset("/img/commander-agro-bags/commander-potash.webp")} alt="Commander Potash" loading="lazy" />
+                    <img src={asset("/img/commander-agro-bags/map.webp")} alt="MAP" loading="lazy" />
+                  </div>
+                  <div className="catalogue-link-info">
+                    <h3>Fertilizer Bags</h3>
+                    <p>Premium imported &amp; locally formulated fertilizers for enhanced crop nutrition.</p>
+                    <span className="catalogue-link-count">{commanderAgroBags.length} Products</span>
+                    <span className="catalogue-link-arrow">&rarr;</span>
+                  </div>
+                </Link>
+              </Reveal>
             </div>
           </div>
         </section>

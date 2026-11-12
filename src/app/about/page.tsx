@@ -63,7 +63,7 @@ export default function AboutPage() {
                   <div className="tree-line" />
                   <div className="tree-branches">
                     {companies.map((c) => (
-                      <Link href={`/companies/${c.slug}`} className="tree-node" key={c.slug}>
+                      <Link href={`/companies/${c.slug}`} className="tree-node" data-company={c.slug} key={c.slug}>
                         {c.logo ? (
                           <img src={asset(c.logo)} alt={c.short} className="tree-node-logo" />
                         ) : (

@@ -163,8 +163,8 @@ body::after {
   }
   .header-logo img { height: 32px; width: auto; }
   .nav { display: flex; gap: 28px; align-items: center; }
-  .nav a { font-size: 13px; font-weight: 400; color: var(--fg-dim); transition: color 0.2s; letter-spacing: 0.01em; }
-  .nav a:hover { color: var(--fg); }
+  .nav a { font-size: 13px; font-weight: 400; color: var(--fg-dim); transition: color 0.2s, font-weight 0.2s; letter-spacing: 0.01em; }
+  .nav a:hover { color: var(--fg); font-weight: 600; }
   .nav-actions { display: flex; gap: 12px; align-items: center; }
   .theme-btn {
     width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
@@ -191,9 +191,16 @@ body::after {
     box-shadow: 0 16px 48px rgba(0,0,0,0.1);
   }
   .dd:hover .dd-menu { opacity: 1; visibility: visible; }
-  .dd-menu a { display: block; padding: 8px 14px; font-size: 13px; border-radius: 10px; color: var(--fg-dim); transition: background 0.15s, color 0.15s; }
-  .dd-menu a:hover { background: rgba(255,255,255,0.08); color: var(--fg); }
+  .dd-menu a { display: block; padding: 8px 14px; font-size: 13px; border-radius: 10px; color: var(--fg-dim); transition: background 0.15s, color 0.15s, font-weight 0.15s; }
+  .dd-menu a:hover { background: rgba(255,255,255,0.08); color: var(--fg); font-weight: 600; }
   [data-theme="light"] .dd-menu a:hover { background: rgba(0,0,0,0.05); }
+
+  .dd-menu a[data-company="commander-agro"]:hover { color: #006040; }
+  .dd-menu a[data-company="gharbeen"]:hover { color: #b41e1e; }
+  .dd-menu a[data-company="gharbeen-seeds"]:hover { color: #4c9628; }
+  .dd-menu a[data-company="mak-ag"]:hover { color: #3db86a; }
+  .dd-menu a[data-company="commander-petrogas"]:hover { color: #005ab4; }
+  .dd-menu a[data-company="rafco-energy"]:hover { color: #282878; }
 
   /* ── Buttons ── */
   .btn {
@@ -385,6 +392,76 @@ body::after {
     background: rgba(255,255,255,0.8);
     box-shadow: 0 12px 36px rgba(61,184,106,0.12), inset 0 1px 0 rgba(255,255,255,0.6);
   }
+
+  /* Per-company hover glow */
+  .tree-node[data-company="commander-agro"]:hover {
+    border-color: rgba(0,100,60,0.45);
+    box-shadow: 0 12px 40px rgba(0,100,60,0.22), 0 0 60px rgba(0,100,60,0.10), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .tree-node[data-company="commander-agro"]::after {
+    background: radial-gradient(circle at 50% 50%, rgba(0,100,60,0.12) 0%, transparent 70%);
+  }
+  [data-theme="light"] .tree-node[data-company="commander-agro"]:hover {
+    box-shadow: 0 12px 40px rgba(0,100,60,0.16), 0 0 60px rgba(0,100,60,0.06), inset 0 1px 0 rgba(255,255,255,0.6);
+  }
+  .tree-node[data-company="commander-agro"]:hover .tree-node-name { color: #006040; }
+
+  .tree-node[data-company="gharbeen"]:hover {
+    border-color: rgba(180,30,30,0.45);
+    box-shadow: 0 12px 40px rgba(180,30,30,0.22), 0 0 60px rgba(180,30,30,0.10), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .tree-node[data-company="gharbeen"]::after {
+    background: radial-gradient(circle at 50% 50%, rgba(180,30,30,0.12) 0%, transparent 70%);
+  }
+  [data-theme="light"] .tree-node[data-company="gharbeen"]:hover {
+    box-shadow: 0 12px 40px rgba(180,30,30,0.16), 0 0 60px rgba(180,30,30,0.06), inset 0 1px 0 rgba(255,255,255,0.6);
+  }
+  .tree-node[data-company="gharbeen"]:hover .tree-node-name { color: #b41e1e; }
+
+  .tree-node[data-company="gharbeen-seeds"]:hover {
+    border-color: rgba(76,150,40,0.45);
+    box-shadow: 0 12px 40px rgba(76,150,40,0.22), 0 0 60px rgba(76,150,40,0.10), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .tree-node[data-company="gharbeen-seeds"]::after {
+    background: radial-gradient(circle at 50% 50%, rgba(76,150,40,0.12) 0%, transparent 70%);
+  }
+  [data-theme="light"] .tree-node[data-company="gharbeen-seeds"]:hover {
+    box-shadow: 0 12px 40px rgba(76,150,40,0.16), 0 0 60px rgba(76,150,40,0.06), inset 0 1px 0 rgba(255,255,255,0.6);
+  }
+  .tree-node[data-company="gharbeen-seeds"]:hover .tree-node-name { color: #4c9628; }
+
+  .tree-node[data-company="mak-ag"]:hover {
+    border-color: rgba(61,184,106,0.45);
+    box-shadow: 0 12px 40px rgba(61,184,106,0.22), 0 0 60px rgba(61,184,106,0.10), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .tree-node[data-company="mak-ag"]::after {
+    background: radial-gradient(circle at 50% 50%, rgba(61,184,106,0.12) 0%, transparent 70%);
+  }
+  .tree-node[data-company="mak-ag"]:hover .tree-node-name { color: #3db86a; }
+
+  .tree-node[data-company="commander-petrogas"]:hover {
+    border-color: rgba(0,90,180,0.45);
+    box-shadow: 0 12px 40px rgba(0,90,180,0.22), 0 0 60px rgba(0,90,180,0.10), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .tree-node[data-company="commander-petrogas"]::after {
+    background: radial-gradient(circle at 50% 50%, rgba(0,90,180,0.12) 0%, transparent 70%);
+  }
+  [data-theme="light"] .tree-node[data-company="commander-petrogas"]:hover {
+    box-shadow: 0 12px 40px rgba(0,90,180,0.16), 0 0 60px rgba(0,90,180,0.06), inset 0 1px 0 rgba(255,255,255,0.6);
+  }
+  .tree-node[data-company="commander-petrogas"]:hover .tree-node-name { color: #005ab4; }
+
+  .tree-node[data-company="rafco-energy"]:hover {
+    border-color: rgba(40,40,120,0.45);
+    box-shadow: 0 12px 40px rgba(40,40,120,0.20), 0 0 60px rgba(200,60,20,0.08), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .tree-node[data-company="rafco-energy"]::after {
+    background: radial-gradient(circle at 50% 50%, rgba(40,40,120,0.10) 0%, rgba(200,60,20,0.05) 50%, transparent 70%);
+  }
+  [data-theme="light"] .tree-node[data-company="rafco-energy"]:hover {
+    box-shadow: 0 12px 40px rgba(40,40,120,0.14), 0 0 60px rgba(200,60,20,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
+  }
+  .tree-node[data-company="rafco-energy"]:hover .tree-node-name { color: #282878; }
   .tree-node-logo {
     width: 48px; height: 48px; object-fit: contain; border-radius: 12px;
     transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
@@ -453,6 +530,27 @@ body::after {
   .cc-cta:hover { background: rgba(61,184,106,0.9); transform: scale(1.03); box-shadow: 0 8px 32px rgba(61,184,106,0.4), inset 0 1px 0 rgba(255,255,255,0.2); }
   .cc-cta svg { width: 16px; height: 16px; transition: transform 0.2s; }
   .cc-cta:hover svg { transform: translateX(3px); }
+
+  /* ── Companies Page Card Extras ── */
+  .companies-card-logo {
+    width: 80px; height: 80px; margin-bottom: 16px;
+    background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px; border: 1px solid var(--glass-border);
+    display: flex; align-items: center; justify-content: center;
+    padding: 12px; overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .companies-card-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .companies-card-facts {
+    display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap;
+  }
+  .companies-card-fact {
+    display: flex; flex-direction: column; gap: 2px;
+    padding: 10px 16px; border-radius: 10px;
+    background: var(--bg-alt); min-width: 80px;
+  }
+  .companies-card-fact-val { font-size: 16px; font-weight: 700; color: var(--fg); }
+  .companies-card-fact-lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--fg-dim); }
 
   /* ── Section Layout ── */
   .card-section { padding: 64px 0; position: relative; }
@@ -897,6 +995,135 @@ body::after {
   .co-gallery-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 0.5s; display: block; }
   .co-gallery-item:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(0,0,0,0.1); }
   .co-gallery-item:hover img { transform: scale(1.04); }
+
+  /* ── Catalogue Grid ── */
+  .catalogue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .catalogue-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--radius);
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.4s;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.08);
+    position: relative;
+  }
+  .catalogue-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    pointer-events: none;
+  }
+  .catalogue-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.12); }
+  .catalogue-img {
+    background: var(--bg-alt);
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+  }
+  .catalogue-img img {
+    max-width: 100%; max-height: 100%; object-fit: contain;
+    transition: transform 0.5s;
+  }
+  .catalogue-card:hover .catalogue-img img { transform: scale(1.06); }
+  .catalogue-info {
+    padding: 16px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .catalogue-info h4 {
+    font-size: 16px; font-weight: 700; letter-spacing: -0.01em;
+    margin: 0; line-height: 1.3;
+  }
+  .catalogue-badge {
+    display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.04em; padding: 3px 8px; border-radius: 6px;
+    width: fit-content;
+  }
+  .catalogue-badge--insecticide { background: rgba(239,68,68,0.12); color: #dc2626; }
+  .catalogue-badge--herbicide { background: rgba(34,197,94,0.12); color: #16a34a; }
+  .catalogue-badge--fungicide { background: rgba(59,130,246,0.12); color: #2563eb; }
+  .catalogue-badge--acaricide { background: rgba(168,85,247,0.12); color: #9333ea; }
+  .catalogue-badge--adjuvant { background: rgba(107,114,128,0.12); color: #4b5563; }
+  .catalogue-badge--plant-growth-regulator { background: rgba(245,158,11,0.12); color: #d97706; }
+  .catalogue-badge--fertilizer { background: rgba(20,184,166,0.12); color: #0d9488; }
+  .catalogue-badge--organic-fertilizer { background: rgba(101,67,33,0.12); color: #654321; }
+  .catalogue-active {
+    font-size: 13px; color: var(--fg-dim); line-height: 1.4; margin: 0;
+  }
+  .catalogue-meta {
+    display: flex; gap: 12px; font-size: 12px; font-weight: 600;
+    color: var(--fg-dim); margin-top: 2px;
+  }
+  .catalogue-meta span {
+    padding: 2px 6px; border-radius: 4px; background: var(--bg-alt);
+  }
+  @media (max-width: 600px) {
+    .catalogue-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .catalogue-info { padding: 12px; }
+    .catalogue-info h4 { font-size: 14px; }
+    .catalogue-img { padding: 10px; }
+  }
+
+  /* ── Catalogue Link Cards ── */
+  .catalogue-links {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  @media (max-width: 700px) { .catalogue-links { grid-template-columns: 1fr; } }
+  .catalogue-link-card {
+    display: flex; flex-direction: column;
+    background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--radius); border: 1px solid var(--glass-border);
+    overflow: hidden; text-decoration: none; color: inherit;
+    transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.4s;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.08);
+    position: relative;
+  }
+  .catalogue-link-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    pointer-events: none;
+  }
+  .catalogue-link-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.12); }
+  .catalogue-link-imgs {
+    display: flex; gap: 8px; padding: 24px 24px 16px;
+    background: var(--bg-alt); align-items: center; justify-content: center;
+  }
+  .catalogue-link-imgs img {
+    height: 140px; object-fit: contain;
+    transition: transform 0.5s;
+  }
+  .catalogue-link-card:hover .catalogue-link-imgs img { transform: scale(1.05); }
+  .catalogue-link-info {
+    padding: 20px 24px 24px; position: relative;
+  }
+  .catalogue-link-info h3 {
+    font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 8px;
+  }
+  .catalogue-link-info p {
+    font-size: 14px; color: var(--fg-dim); line-height: 1.6; margin: 0 0 12px;
+  }
+  .catalogue-link-count {
+    font-size: 13px; font-weight: 600; color: var(--accent, #3db86a);
+  }
+  .catalogue-link-arrow {
+    position: absolute; right: 24px; bottom: 24px;
+    font-size: 24px; color: var(--fg-dim);
+    transition: transform 0.3s, color 0.3s;
+  }
+  .catalogue-link-card:hover .catalogue-link-arrow { transform: translateX(4px); color: var(--accent, #3db86a); }
+
+  /* ── Catalogue Back Link ── */
+  .catalogue-back {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 14px; font-weight: 600; color: var(--fg-dim);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .catalogue-back:hover { color: var(--fg); }
+
   .co-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .co-nav-card {
     display: flex; flex-direction: column; gap: 4px; padding: 32px;

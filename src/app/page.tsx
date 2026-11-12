@@ -85,7 +85,7 @@ export default function Home() {
                   <div className="tree-line" />
                   <div className="tree-branches">
                     {companies.map((c) => (
-                      <Link href={`/companies/${c.slug}`} className="tree-node" key={c.slug}>
+                      <Link href={`/companies/${c.slug}`} className="tree-node" data-company={c.slug} key={c.slug}>
                         {c.logo ? (
                           <img src={asset(c.logo)} alt={c.short} className="tree-node-logo" />
                         ) : (
@@ -167,6 +167,12 @@ export default function Home() {
               role: chairman.bios[1].role,
               message: chairman.bios[1].paras[0],
               initials: "SR",
+            },
+            {
+              name: chairman.bios[2].name,
+              role: chairman.bios[2].role,
+              message: chairman.bios[2].paras[0],
+              initials: "ZU",
             },
           ]} />
         </div>
