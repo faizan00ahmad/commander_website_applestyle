@@ -1019,7 +1019,7 @@ body::after {
   }
   .catalogue-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.12); }
   .catalogue-img {
-    background: var(--bg-alt);
+    background: #fff;
     display: flex; align-items: center; justify-content: center;
     padding: 16px;
     aspect-ratio: 3/4;
@@ -1030,6 +1030,10 @@ body::after {
     transition: transform 0.5s;
   }
   .catalogue-card:hover .catalogue-img img { transform: scale(1.06); }
+  .catalogue-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(61,184,106,0.15), 0 0 0 2px rgba(61,184,106,0.2);
+  }
   .catalogue-info {
     padding: 16px;
     display: flex; flex-direction: column; gap: 6px;
@@ -1162,11 +1166,11 @@ body::after {
   }
   .catalogue-preview-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 24px rgba(61,184,106,0.15), 0 0 0 2px rgba(61,184,106,0.2);
   }
   .catalogue-preview-img {
     aspect-ratio: 3/4; border-radius: 10px; overflow: hidden;
-    background: var(--bg-alt); margin-bottom: 10px;
+    background: #fff; margin-bottom: 10px;
   }
   .catalogue-preview-img img {
     width: 100%; height: 100%; object-fit: contain;
@@ -1188,6 +1192,64 @@ body::after {
     text-decoration: none; transition: color 0.2s;
   }
   .catalogue-back:hover { color: var(--fg); }
+
+  /* ── Mission & Vision ── */
+  .mv-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  .mv-card {
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--radius); padding: 40px 32px; text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .mv-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(61,184,106,0.1), 0 0 0 1px rgba(61,184,106,0.15);
+  }
+  .mv-icon {
+    width: 56px; height: 56px; margin: 0 auto 20px;
+  }
+  .mv-icon svg { width: 100%; height: 100%; }
+  .mv-card h3 {
+    font-size: clamp(20px, 2.5vw, 24px); font-weight: 700;
+    letter-spacing: -0.02em; margin: 0 0 14px;
+  }
+  .mv-card p {
+    font-size: 15px; line-height: 1.7; color: var(--fg-dim); margin: 0;
+  }
+  @media (max-width: 640px) {
+    .mv-grid { grid-template-columns: 1fr; }
+    .mv-card { padding: 28px 20px; }
+  }
+
+  /* ── Team Section ── */
+  .team-row {
+    display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+  }
+  .team-card {
+    width: 160px; text-align: center; padding: 24px 16px;
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    border-radius: 20px; transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .team-avatar {
+    width: 80px; height: 80px; margin: 0 auto 14px; border-radius: 50%; overflow: hidden;
+  }
+  .team-avatar svg { width: 100%; height: 100%; }
+  .team-name {
+    font-size: 14px; font-weight: 700; margin: 0 0 4px; letter-spacing: -0.01em;
+  }
+  .team-role {
+    font-size: 12px; color: var(--fg-dim); font-weight: 500;
+  }
+  @media (max-width: 480px) {
+    .team-card { width: 140px; padding: 18px 12px; }
+    .team-avatar { width: 64px; height: 64px; }
+  }
 
   .co-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .co-nav-card {
