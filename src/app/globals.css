@@ -1116,6 +1116,71 @@ body::after {
   }
   .catalogue-link-card:hover .catalogue-link-arrow { transform: translateX(4px); color: var(--accent, #3db86a); }
 
+  /* ── Catalogue Preview Row ── */
+  .catalogue-preview-header {
+    display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px;
+  }
+  .catalogue-preview-header h3 {
+    font-size: clamp(20px, 3vw, 26px); font-weight: 700; letter-spacing: -0.02em; margin: 0;
+  }
+  .catalogue-preview-count {
+    font-size: 13px; font-weight: 600; color: var(--fg-dim);
+    background: var(--glass-bg); padding: 4px 10px; border-radius: 20px;
+    border: 1px solid var(--glass-border);
+  }
+
+  /* Marquee slider */
+  .catalogue-marquee {
+    overflow: hidden; width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+  .catalogue-marquee-track {
+    display: flex; gap: 16px; width: max-content;
+    animation: catalogue-slide calc(var(--marquee-items, 8) * 4s) linear infinite;
+  }
+  .catalogue-marquee-track:hover {
+    animation-play-state: paused;
+  }
+  .catalogue-marquee-track--reverse {
+    animation-name: catalogue-slide-reverse;
+  }
+  @keyframes catalogue-slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes catalogue-slide-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+
+  .catalogue-preview-card {
+    flex-shrink: 0; width: 180px;
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    border-radius: 16px; padding: 16px; text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .catalogue-preview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .catalogue-preview-img {
+    aspect-ratio: 3/4; border-radius: 10px; overflow: hidden;
+    background: var(--bg-alt); margin-bottom: 10px;
+  }
+  .catalogue-preview-img img {
+    width: 100%; height: 100%; object-fit: contain;
+  }
+  .catalogue-preview-card h4 {
+    font-size: 14px; font-weight: 600; margin: 0 0 6px; letter-spacing: -0.01em;
+  }
+  .catalogue-preview-cta {
+    text-align: center; margin-top: 28px;
+  }
+  @media (max-width: 480px) {
+    .catalogue-preview-card { width: 150px; padding: 12px; }
+  }
+
   /* ── Catalogue Back Link ── */
   .catalogue-back {
     display: inline-flex; align-items: center; gap: 6px;

@@ -115,7 +115,7 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
         </section>
       )}
 
-      {/* ── Product Catalogue Links (Gharbeen only) ── */}
+      {/* ── Product Catalogue Preview (Gharbeen) ── */}
       {co.slug === "gharbeen" && (
         <section className="inner-section inner-section--alt">
           <div className="container">
@@ -125,43 +125,65 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                 <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, letterSpacing: "-0.02em" }}>Product Catalogue</h2>
               </div>
             </Reveal>
-            <div className="catalogue-links">
-              <Reveal>
-                <Link href="/companies/gharbeen/bottles" className="catalogue-link-card">
-                  <div className="catalogue-link-imgs">
-                    <img src={asset("/img/gharbeen-bottles/armata.webp")} alt="Armata" loading="lazy" />
-                    <img src={asset("/img/gharbeen-bottles/flanker.webp")} alt="Flanker" loading="lazy" />
-                    <img src={asset("/img/gharbeen-bottles/rommel.webp")} alt="Rommel" loading="lazy" />
+
+            <Reveal>
+              <div className="catalogue-preview-header">
+                <h3>Bottles</h3>
+                <span className="catalogue-preview-count">{gharbeenBottles.length} Products</span>
+              </div>
+            </Reveal>
+          </div>
+          <div className="catalogue-marquee">
+            <div className="catalogue-marquee-track" style={{ "--marquee-items": gharbeenBottles.length } as React.CSSProperties}>
+              {[...gharbeenBottles, ...gharbeenBottles].map((p, i) => (
+                <div className="catalogue-preview-card" key={`${p.slug}-${i}`}>
+                  <div className="catalogue-preview-img">
+                    <img src={asset(`/img/gharbeen-bottles/${p.slug}.webp`)} alt={p.name} loading="lazy" />
                   </div>
-                  <div className="catalogue-link-info">
-                    <h3>Bottles</h3>
-                    <p>Liquid formulations — EC, SC, SL &amp; OD — for crop protection and nutrition.</p>
-                    <span className="catalogue-link-count">{gharbeenBottles.length} Products</span>
-                    <span className="catalogue-link-arrow">&rarr;</span>
-                  </div>
-                </Link>
-              </Reveal>
-              <Reveal>
-                <Link href="/companies/gharbeen/sachets" className="catalogue-link-card">
-                  <div className="catalogue-link-imgs">
-                    <img src={asset("/img/gharbeen-sachets/aragon.webp")} alt="Aragon" loading="lazy" />
-                    <img src={asset("/img/gharbeen-sachets/kulver.webp")} alt="Kulver" loading="lazy" />
-                    <img src={asset("/img/gharbeen-sachets/fleming.webp")} alt="Fleming" loading="lazy" />
-                  </div>
-                  <div className="catalogue-link-info">
-                    <h3>Sachets</h3>
-                    <p>Dry formulations — WP, WG, SP &amp; GR — for broad-spectrum pest and disease management.</p>
-                    <span className="catalogue-link-count">{gharbeenSachets.length} Products</span>
-                    <span className="catalogue-link-arrow">&rarr;</span>
-                  </div>
-                </Link>
-              </Reveal>
+                  <h4>{p.name}</h4>
+                  <span className={`catalogue-badge catalogue-badge--${p.category.toLowerCase().replace(/ /g, "-")}`}>{p.category}</span>
+                </div>
+              ))}
             </div>
+          </div>
+          <div className="container">
+            <Reveal>
+              <div className="catalogue-preview-cta">
+                <Link href="/companies/gharbeen/bottles" className="btn btn-primary">See All Bottles &rarr;</Link>
+              </div>
+            </Reveal>
+
+            <Reveal>
+              <div className="catalogue-preview-header" style={{ marginTop: 64 }}>
+                <h3>Sachets</h3>
+                <span className="catalogue-preview-count">{gharbeenSachets.length} Products</span>
+              </div>
+            </Reveal>
+          </div>
+          <div className="catalogue-marquee">
+            <div className="catalogue-marquee-track catalogue-marquee-track--reverse" style={{ "--marquee-items": gharbeenSachets.length } as React.CSSProperties}>
+              {[...gharbeenSachets, ...gharbeenSachets].map((p, i) => (
+                <div className="catalogue-preview-card" key={`${p.slug}-${i}`}>
+                  <div className="catalogue-preview-img">
+                    <img src={asset(`/img/gharbeen-sachets/${p.slug}.webp`)} alt={p.name} loading="lazy" />
+                  </div>
+                  <h4>{p.name}</h4>
+                  <span className={`catalogue-badge catalogue-badge--${p.category.toLowerCase().replace(/ /g, "-")}`}>{p.category}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="container">
+            <Reveal>
+              <div className="catalogue-preview-cta">
+                <Link href="/companies/gharbeen/sachets" className="btn btn-primary">See All Sachets &rarr;</Link>
+              </div>
+            </Reveal>
           </div>
         </section>
       )}
 
-      {/* ── Product Catalogue Links (Commander Agro only) ── */}
+      {/* ── Product Catalogue Preview (Commander Agro) ── */}
       {co.slug === "commander-agro" && (
         <section className="inner-section inner-section--alt">
           <div className="container">
@@ -171,23 +193,33 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                 <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, letterSpacing: "-0.02em" }}>Product Catalogue</h2>
               </div>
             </Reveal>
-            <div className="catalogue-links">
-              <Reveal>
-                <Link href="/companies/commander-agro/bags" className="catalogue-link-card">
-                  <div className="catalogue-link-imgs">
-                    <img src={asset("/img/commander-agro-bags/azler.webp")} alt="Azler" loading="lazy" />
-                    <img src={asset("/img/commander-agro-bags/commander-potash.webp")} alt="Commander Potash" loading="lazy" />
-                    <img src={asset("/img/commander-agro-bags/map.webp")} alt="MAP" loading="lazy" />
+
+            <Reveal>
+              <div className="catalogue-preview-header">
+                <h3>Fertilizer Bags</h3>
+                <span className="catalogue-preview-count">{commanderAgroBags.length} Products</span>
+              </div>
+            </Reveal>
+          </div>
+          <div className="catalogue-marquee">
+            <div className="catalogue-marquee-track" style={{ "--marquee-items": commanderAgroBags.length } as React.CSSProperties}>
+              {[...commanderAgroBags, ...commanderAgroBags].map((p, i) => (
+                <div className="catalogue-preview-card" key={`${p.slug}-${i}`}>
+                  <div className="catalogue-preview-img">
+                    <img src={asset(`/img/commander-agro-bags/${p.slug}.webp`)} alt={p.name} loading="lazy" />
                   </div>
-                  <div className="catalogue-link-info">
-                    <h3>Fertilizer Bags</h3>
-                    <p>Premium imported &amp; locally formulated fertilizers for enhanced crop nutrition.</p>
-                    <span className="catalogue-link-count">{commanderAgroBags.length} Products</span>
-                    <span className="catalogue-link-arrow">&rarr;</span>
-                  </div>
-                </Link>
-              </Reveal>
+                  <h4>{p.name}</h4>
+                  <span className={`catalogue-badge catalogue-badge--${p.category.toLowerCase().replace(/ /g, "-")}`}>{p.category}</span>
+                </div>
+              ))}
             </div>
+          </div>
+          <div className="container">
+            <Reveal>
+              <div className="catalogue-preview-cta">
+                <Link href="/companies/commander-agro/bags" className="btn btn-primary">See All Bags &rarr;</Link>
+              </div>
+            </Reveal>
           </div>
         </section>
       )}
