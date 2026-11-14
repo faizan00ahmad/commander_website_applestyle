@@ -1,6 +1,6 @@
 export const site = {
   name: "Commander Group",
-  tagline: "Quality within your reach",
+  tagline: "Built on Experience. Driven by Expertise. Connected to Progress.",
   founded: 1996,
   address: "5A/5B Industrial Estate, Multan, Pakistan.",
   phones: ["+92 61 6514 060-61-62-63"],
@@ -28,11 +28,14 @@ export type Company = {
   theme: string;
   logo?: string;
   cover: string;
+  tagline?: string;
   description: string[];
   facts: { label: string; value: string }[];
   products: { name: string; image: string }[];
   gallery: string[];
   comingSoon?: boolean;
+  capabilities?: string[];
+  audiences?: string[];
 };
 
 const agro = Array.from({ length: 12 }, (_, i) => `/img/commander-agro-${String(i + 1).padStart(2, "0")}-thumb.jpg`);
@@ -48,14 +51,15 @@ export const companies: Company[] = [
     slug: "commander-agro",
     name: "Commander Agro (Pvt) Ltd.",
     short: "Commander Agro",
-    sector: "Agro Chemicals",
+    sector: "Agro Chemicals · Manufacturing",
     theme: "agro",
     logo: "/img/commander-agro-logo-new.webp",
     cover: "/img/commander-agro-02.jpg",
+    tagline: "The Formulation Strength Behind Productive Agriculture",
     description: [
-      "Pakistan's leading importer and formulator of crop-protection chemicals — Pesticides, Fungicides, Rodenticides, Acaricides and Weedicides — trusted by thousands of farmers since 1996.",
-      "Our 15-hectare manufacturing complex houses state-of-the-art formulation plants for liquid, powder and granule products with fully computerized refilling and repacking lines.",
-      "An ISO 17025-certified R&D division drives continuous innovation, ensuring every product that leaves our facility meets the highest global standards.",
+      "Founded in 1996, Commander Agro (Pvt.) Ltd. is the manufacturing and formulation cornerstone of Commander Group. The company operates across agrochemical importation and formulation, including herbicides, insecticides and fungicides.",
+      "Its established liquid, powder and granular formulation capabilities help bridge technical inputs and market-ready agricultural solutions.",
+      "From technical sourcing to formulated crop protection, Commander Agro brings industrial capability to the heart of Pakistan's agricultural value chain.",
     ],
     facts: [
       { label: "Established", value: "1996" },
@@ -68,19 +72,22 @@ export const companies: Company[] = [
       { name: "Weedicides", image: "/img/commander-agro-05.jpg" },
     ],
     gallery: agro,
+    capabilities: ["Formulation expertise", "Technical sourcing", "Crop-protection portfolio", "Industrial handling & packaging"],
+    audiences: ["Importers & international principals", "Agricultural distributors", "Institutional buyers"],
   },
   {
     slug: "gharbeen",
     name: "Gharbeen (Pvt) Ltd.",
     short: "Gharbeen",
-    sector: "Agro Chemicals · Retail",
+    sector: "Agro Chemicals · Distribution",
     theme: "gharbeen",
     logo: "/img/gharbeen-logo-new.webp",
     cover: "/img/Armata.jpg",
+    tagline: "From Product Innovation to Farmer Adoption",
     description: [
-      "Our flagship retail brand, launched in 2011, brings premium branded formulations with distinctive active ingredients directly to Pakistan's farming communities.",
+      "Established in 2011, Gharbeen (Pvt.) Ltd. is the market-facing agricultural business of Commander Group. It builds the commercial bridge between agricultural products and farming communities through distribution relationships, field engagement, product education and market development.",
+      "Its proposition is not simply selling inputs — it is making agricultural solutions accessible, understandable and relevant to growers' needs.",
       "With 5 regional hubs and over 50 territorial offices, our field teams educate farmers at their doorstep — delivering knowledge alongside every product.",
-      "Regular on-farm training sessions ensure best-practice application for maximum crop yield and sustainable agriculture.",
     ],
     facts: [
       { label: "Launched", value: "2011" },
@@ -93,19 +100,22 @@ export const companies: Company[] = [
       { name: "Rommel", image: "/img/rommel.jpg" },
     ],
     gallery: gharbeenImgs,
+    capabilities: ["Dealer relationships", "Field sales", "Farmer engagement", "Product awareness", "Crop nutrition & soil-support portfolio"],
+    audiences: ["Farmers", "Agro-dealers", "Distributors", "Regional agricultural markets"],
   },
   {
     slug: "gharbeen-seeds",
-    name: "Gharbeen Seeds",
-    short: "Gharbeen Seeds",
+    name: "Commander Seeds (Pvt) Ltd.",
+    short: "Commander Seeds",
     sector: "Seeds · Agriculture",
     theme: "seeds",
     logo: "/img/gharbeen-seeds-logo.webp",
     cover: "/img/commander-agro-04.jpg",
+    tagline: "Strong Beginnings for Tomorrow's Harvests",
     description: [
-      "A dedicated seed division providing certified, high-yield varieties for Pakistan's most important crops — wheat, cotton, rice, and maize.",
-      "Every seed line undergoes rigorous multi-season field trials and genetic testing before reaching farmers, ensuring proven performance in local conditions.",
-      "Engineered for higher yields, stronger disease resistance and climate adaptability across Pakistan's diverse agro-ecological zones.",
+      "Commander Seeds (Pvt.) Ltd. focuses on the role of seed choice, crop establishment and agricultural productivity. The seed is the first decision in a successful crop journey.",
+      "Our seed categories, sourcing arrangements and quality procedures are designed to deliver proven performance in Pakistan's diverse agro-ecological zones.",
+      "Engineered for higher yields, stronger disease resistance and climate adaptability across Pakistan's most important crops — wheat, cotton, rice and maize.",
     ],
     facts: [
       { label: "Division of", value: "Commander Group" },
@@ -118,6 +128,8 @@ export const companies: Company[] = [
       { name: "Rice Seeds", image: "/img/commander-agro-08.jpg" },
     ],
     gallery: [],
+    capabilities: ["Seed categories", "Quality approach", "Crop suitability", "Dealer access"],
+    audiences: ["Growers", "Agricultural dealers", "Seed-sector partners"],
   },
   {
     slug: "mak-ag",
@@ -142,6 +154,8 @@ export const companies: Company[] = [
       { name: "Soil Solutions", image: "/img/commander-agro-11.jpg" },
     ],
     gallery: [],
+    capabilities: ["Advanced crop-protection formulations", "Precision-agriculture consulting", "Integrated pest management", "Soil health diagnostics"],
+    audiences: ["Progressive farmers", "Agricultural consultants", "Institutional buyers"],
   },
   {
     slug: "commander-petrogas",
@@ -151,9 +165,10 @@ export const companies: Company[] = [
     theme: "petrogas",
     logo: "/img/petrogas-logo-new.webp",
     cover: "/img/petrogas.jpg",
+    tagline: "Energy Delivered with Operational Confidence",
     description: [
-      "Pakistan's premier LPG import and distribution company — supplying clean, reliable energy to homes and businesses nationwide since 2017.",
-      "Our Multan plant stores up to 300 MT daily, serving a network of retail outlets and authorized distributors across the country.",
+      "Established in 2017, Commander Petrogas (Pvt.) Ltd. is Commander Group's LPG-focused enterprise, operating from Multan. Its business encompasses LPG handling, storage, cylinder filling and distribution.",
+      "In a market where reliable availability, safe handling and effective distribution matter, the company positions its infrastructure and operational discipline as the foundation of dependable service.",
       "With 9,000+ MT in annual sales and PKR 2.1 Billion in revenue, we hold the distinction of being Pakistan's only LPG facility with both ISO 9000 and ISO 14000 certifications.",
     ],
     facts: [
@@ -168,19 +183,22 @@ export const companies: Company[] = [
       { name: "Distribution", image: "/img/petrogas-05.jpg" },
     ],
     gallery: petro,
+    capabilities: ["LPG storage & handling", "Domestic & commercial cylinder filling", "Distribution coordination", "Operational safety focus"],
+    audiences: ["LPG distributors", "Hospitality & commercial buyers", "Domestic supply channels"],
   },
   {
     slug: "rafco-energy",
     name: "Rafco Energy (Pvt) Ltd.",
     short: "Rafco Energy",
-    sector: "Energy Infrastructure",
+    sector: "Energy · Infrastructure",
     theme: "energy",
     logo: "/img/rafco-energy-logo.webp",
     cover: "/img/petrogas-05.jpg",
+    tagline: "Built for Opportunity in a Changing Energy Landscape",
     description: [
-      "The energy-infrastructure arm of Commander Group, building the backbone of Pakistan's growing energy ecosystem.",
-      "From trading and distribution to large-scale infrastructure development, Rafco Energy operates across the full energy value chain.",
-      "We are committed to expanding energy access, improving supply-chain efficiency, and delivering sustainable solutions for Pakistan's rapidly evolving energy market.",
+      "Rafco Energy (Pvt.) Ltd. is a focused identity for energy-sector ambition, backed by the values of Commander Group.",
+      "A disciplined, forward-looking energy company positioned to capitalize on opportunities across Pakistan's evolving energy landscape.",
+      "We are committed to expanding energy access, improving supply-chain efficiency, and delivering sustainable solutions for Pakistan's rapidly growing energy market.",
     ],
     facts: [
       { label: "Part of", value: "Commander Group" },
@@ -193,6 +211,8 @@ export const companies: Company[] = [
       { name: "Infrastructure", image: "/img/petrogas-08.jpg" },
     ],
     gallery: [],
+    capabilities: ["Energy-sector operations", "Infrastructure development", "Strategic partnerships", "Market development"],
+    audiences: ["Energy-sector counterparties", "Prospective partners", "Institutional investors"],
   },
 ];
 

@@ -15,13 +15,13 @@ export default function Home() {
         <HeroVisual />
         <div className="hero-content">
           <p className="hero-eyebrow">Commander Group · Since 1996</p>
-          <h1>Quality within <span>your reach</span></h1>
+          <h1>Industries Move Forward When <span>Expertise Comes Together</span></h1>
           <p className="hero-desc">
-            From protecting crops to powering homes — Pakistan&apos;s most trusted agriculture and energy group, serving thousands of farmers and businesses nationwide.
+            Since 1996, Commander Group has developed a diversified business portfolio rooted in agriculture and extending into energy — united by a commitment to trusted relationships, responsible operations and long-term value creation.
           </p>
           <div className="hero-btns">
-            <Link href="/about" className="btn btn-primary">Explore Our Story</Link>
-            <Link href="/contact" className="btn btn-secondary">Partner With Us</Link>
+            <Link href="/companies" className="btn btn-primary">Explore Our Businesses</Link>
+            <Link href="/contact" className="btn btn-secondary">Partner With Commander Group</Link>
           </div>
         </div>
         <div className="hero-scroll">
@@ -51,12 +51,12 @@ export default function Home() {
             <Reveal>
               <div className="intro-text">
                 <p className="intro-eyebrow">Who We Are</p>
-                <h2>Building Pakistan&apos;s future from the ground up</h2>
+                <h2>One Group. Specialized Businesses. Shared Commitment to Progress.</h2>
                 <p className="intro-lead">
-                  Founded in 1996, Commander Group has grown from a single crop-protection company into a diversified conglomerate spanning six companies across agriculture, petrochemicals, seeds, and energy.
+                  Our companies bring specialized capabilities to distinct markets — from agrochemical formulation and agricultural distribution to LPG operations — united by trusted relationships and responsible operations.
                 </p>
                 <p className="intro-sub">
-                  With 55+ offices nationwide, ISO-certified manufacturing facilities, and a team of over 500 professionals, we serve thousands of farmers and businesses — delivering innovation, reliability, and trust across every sector we operate in.
+                  With 55+ offices nationwide, ISO-certified manufacturing facilities, and a team of over 500 professionals, we serve thousands of farmers and businesses — delivering expertise, reliability, and long-term value across every sector we operate in.
                 </p>
                 <div className="intro-highlights">
                   <div className="intro-highlight">

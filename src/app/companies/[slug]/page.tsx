@@ -86,6 +86,7 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
             )}
             <p className="intro-eyebrow" style={{ color: "rgba(255,255,255,0.6)" }}>{co.sector}</p>
             <h1>{co.name}</h1>
+            {co.tagline && <p className="co-hero-tagline">{co.tagline}</p>}
             <p>{co.description[0]}</p>
           </Reveal>
         </div>
@@ -130,7 +131,7 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                     </svg>
                   </div>
                   <h3>Our Mission</h3>
-                  <p>To empower Pakistan&apos;s farming communities with premium, science-backed crop protection solutions — delivering knowledge and quality at every farmer&apos;s doorstep through our extensive field network.</p>
+                  <p>To connect agricultural solutions with the people and fields where their value is realized — making crop protection accessible, understandable and relevant to every grower&apos;s needs.</p>
                 </div>
               </Reveal>
               <Reveal>
@@ -142,7 +143,7 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                     </svg>
                   </div>
                   <h3>Our Vision</h3>
-                  <p>To become the most trusted agro-chemical brand in South Asia — pioneering sustainable agriculture through innovation, farmer education, and a relentless commitment to crop yield excellence.</p>
+                  <p>To become the most trusted agricultural distribution brand in Pakistan — building the commercial bridge between innovation and farmer adoption through channel reach, field engagement and product education.</p>
                 </div>
               </Reveal>
             </div>
@@ -170,6 +171,30 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                 </div>
               </div>
             </Reveal>
+          </div>
+        </section>
+      )}
+
+      {/* ── Capability Pillars ── */}
+      {co.capabilities && co.capabilities.length > 0 && (
+        <section className="inner-section inner-section--alt">
+          <div className="container">
+            <Reveal>
+              <div style={{ textAlign: "center", marginBottom: 48 }}>
+                <p className="intro-eyebrow">What Sets Us Apart</p>
+                <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, letterSpacing: "-0.02em" }}>Capability Pillars</h2>
+              </div>
+            </Reveal>
+            <div className="cap-grid">
+              {co.capabilities.map((cap, i) => (
+                <Reveal key={cap}>
+                  <div className="cap-card">
+                    <span className="cap-num">{String(i + 1).padStart(2, "0")}</span>
+                    <h4>{cap}</h4>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
       )}

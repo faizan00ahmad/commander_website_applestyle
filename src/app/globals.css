@@ -920,6 +920,10 @@ body::after {
   /* ── Company Detail ── */
   .co-hero-logo { margin-bottom: 20px; }
   .co-hero-logo img { height: 56px; width: auto; margin: 0 auto; filter: brightness(0) invert(1); opacity: 0.85; }
+  .co-hero-tagline {
+    font-size: clamp(16px, 2vw, 20px); font-weight: 500; font-style: italic;
+    color: rgba(255,255,255,0.7); margin: -4px 0 12px; letter-spacing: 0.01em;
+  }
   .co-facts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
   .co-fact-card {
     background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
@@ -1192,6 +1196,32 @@ body::after {
     text-decoration: none; transition: color 0.2s;
   }
   .catalogue-back:hover { color: var(--fg); }
+
+  /* ── Capability Pillars ── */
+  .cap-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;
+  }
+  .cap-card {
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-radius: var(--radius-sm); padding: 28px 24px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .cap-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .cap-num {
+    display: block; font-size: 28px; font-weight: 800;
+    color: var(--accent); opacity: 0.4; margin-bottom: 10px; letter-spacing: -0.04em;
+  }
+  .cap-card h4 {
+    font-size: 15px; font-weight: 600; letter-spacing: -0.01em; margin: 0;
+  }
+  @media (max-width: 480px) {
+    .cap-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .cap-card { padding: 20px 16px; }
+  }
 
   /* ── Mission & Vision ── */
   .mv-grid {
