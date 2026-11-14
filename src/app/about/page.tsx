@@ -20,7 +20,7 @@ export default function AboutPage() {
           <Reveal>
             <p className="intro-eyebrow" style={{ color: "rgba(255,255,255,0.6)" }}>About Commander Group</p>
             <h1>Built on trust.<br />Driven by quality.</h1>
-            <p>Since 1996, Commander Group has grown into Pakistan&apos;s most trusted conglomerate across agriculture and energy — serving thousands of farmers and businesses nationwide.</p>
+            <p>Since 1996, Commander Group has grown into Pakistan&apos;s most trusted conglomerate across agriculture and energy, serving thousands of farmers and businesses nationwide.</p>
           </Reveal>
         </div>
       </section>
@@ -49,7 +49,7 @@ export default function AboutPage() {
               <Reveal>
                 <p className="cc-eyebrow">Our Group</p>
                 <h3>One vision. Six companies.</h3>
-                <p>Commander Group is a diversified conglomerate spanning agriculture, petrochemicals, seeds, and energy — united under one mission of quality and trust.</p>
+                <p>Commander Group is a diversified conglomerate spanning agriculture, petrochemicals, seeds, and energy, united under one mission of quality and trust.</p>
               </Reveal>
             </div>
             <div className="cc-tree-side">
@@ -163,7 +163,7 @@ export default function AboutPage() {
               <Reveal>
                 <p className="cc-eyebrow">Certifications</p>
                 <h3>Internationally recognized quality standards</h3>
-                <p>Commander Group holds ISO 9000, ISO 14000, and ISO 17025 certifications — a testament to our commitment to world-class manufacturing and environmental standards.</p>
+                <p>Commander Group holds ISO 9000, ISO 14000, and ISO 17025 certifications, a testament to our commitment to world-class manufacturing and environmental standards.</p>
                 <div className="cert-imgs" style={{ marginTop: 24 }}>
                   <img src={asset("/img/certificate-1-1.jpg")} alt="ISO Certificate" />
                   <img src={asset("/img/certificate-1-2.jpg")} alt="Quality Certificate" />
@@ -212,7 +212,7 @@ export default function AboutPage() {
           <Reveal>
             <p className="intro-eyebrow">Let&apos;s Grow Together</p>
             <h2 style={{ fontSize: "clamp(26px, 3.5vw, 38px)", fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 12 }}>Ready to grow together?</h2>
-            <p style={{ fontSize: 16, color: "var(--fg-dim)", maxWidth: 520, margin: "0 auto 24px", lineHeight: 1.6 }}>Whether you&apos;re a farmer, distributor, or business — we&apos;d love to hear from you.</p>
+            <p style={{ fontSize: 16, color: "var(--fg-dim)", maxWidth: 520, margin: "0 auto 24px", lineHeight: 1.6 }}>Whether you&apos;re a farmer, distributor, or business, we&apos;d love to hear from you.</p>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/contact" className="btn btn-primary">Get in Touch</Link>
               <Link href="/leadership" className="btn btn-secondary">Meet Our Leaders</Link>

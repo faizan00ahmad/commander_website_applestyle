@@ -130,7 +130,7 @@ export default function LeadershipPage() {
           <Reveal>
             <p className="intro-eyebrow">Partner With Us</p>
             <h2 style={{ fontSize: "clamp(26px, 3.5vw, 38px)", fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 12 }}>Let&apos;s build Pakistan&apos;s future together</h2>
-            <p style={{ fontSize: 16, color: "var(--fg-dim)", maxWidth: 520, margin: "0 auto 24px", lineHeight: 1.6 }}>Whether you&apos;re a farmer, distributor, or business — we&apos;d love to hear from you.</p>
+            <p style={{ fontSize: 16, color: "var(--fg-dim)", maxWidth: 520, margin: "0 auto 24px", lineHeight: 1.6 }}>Whether you&apos;re a farmer, distributor, or business, we&apos;d love to hear from you.</p>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/contact" className="btn btn-primary">Get in Touch</Link>
               <Link href="/about" className="btn btn-secondary">About Commander</Link>

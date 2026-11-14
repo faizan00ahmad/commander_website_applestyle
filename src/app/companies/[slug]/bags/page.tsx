@@ -12,7 +12,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   if (params.slug !== "commander-agro") return { title: "Not Found" };
-  return { title: "Fertilizer Bags — Commander Agro Product Catalogue | Commander Group" };
+  return { title: "Fertilizer Bags | Commander Agro Product Catalogue | Commander Group" };
 }
 
 export default function BagsPage({ params }: { params: { slug: string } }) {

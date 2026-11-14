@@ -12,7 +12,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   if (params.slug !== "gharbeen") return { title: "Not Found" };
-  return { title: "Sachets — Gharbeen Product Catalogue | Commander Group" };
+  return { title: "Sachets | Gharbeen Product Catalogue | Commander Group" };
 }
 
 export default function SachetsPage({ params }: { params: { slug: string } }) {
@@ -35,7 +35,7 @@ export default function SachetsPage({ params }: { params: { slug: string } }) {
             )}
             <p className="intro-eyebrow" style={{ color: "rgba(255,255,255,0.6)" }}>Gharbeen · Product Catalogue</p>
             <h1>Sachets</h1>
-            <p>Dry formulations — WP, WG, SP &amp; GR — for broad-spectrum pest and disease management. {gharbeenSachets.length} products.</p>
+            <p>Dry formulations (WP, WG, SP &amp; GR) for broad-spectrum pest and disease management. {gharbeenSachets.length} products.</p>
           </Reveal>
         </div>
       </section>

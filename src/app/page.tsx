@@ -17,7 +17,7 @@ export default function Home() {
           <p className="hero-eyebrow">Commander Group · Since 1996</p>
           <h1>Industries Move Forward When <span>Expertise Comes Together</span></h1>
           <p className="hero-desc">
-            Since 1996, Commander Group has developed a diversified business portfolio rooted in agriculture and extending into energy — united by a commitment to trusted relationships, responsible operations and long-term value creation.
+            Since 1996, Commander Group has developed a diversified business portfolio rooted in agriculture and extending into energy, united by a commitment to trusted relationships, responsible operations and long-term value creation.
           </p>
           <div className="hero-btns">
             <Link href="/companies" className="btn btn-primary">Explore Our Businesses</Link>
@@ -53,10 +53,10 @@ export default function Home() {
                 <p className="intro-eyebrow">Who We Are</p>
                 <h2>One Group. Specialized Businesses. Shared Commitment to Progress.</h2>
                 <p className="intro-lead">
-                  Our companies bring specialized capabilities to distinct markets — from agrochemical formulation and agricultural distribution to LPG operations — united by trusted relationships and responsible operations.
+                  Our companies bring specialized capabilities to distinct markets, from agrochemical formulation and agricultural distribution to LPG operations, united by trusted relationships and responsible operations.
                 </p>
                 <p className="intro-sub">
-                  With 55+ offices nationwide, ISO-certified manufacturing facilities, and a team of over 500 professionals, we serve thousands of farmers and businesses — delivering expertise, reliability, and long-term value across every sector we operate in.
+                  With 55+ offices nationwide, ISO-certified manufacturing facilities, and a team of over 500 professionals, we serve thousands of farmers and businesses, delivering expertise, reliability, and long-term value across every sector we operate in.
                 </p>
                 <div className="intro-highlights">
                   <div className="intro-highlight">
@@ -225,7 +225,7 @@ export default function Home() {
               Ready to partner with Pakistan&apos;s most trusted agriculture &amp; energy group?
             </h2>
             <p style={{ fontSize: 16, color: "var(--fg-dim)", maxWidth: 520, margin: "0 auto 24px", lineHeight: 1.6 }}>
-              Whether you&apos;re a farmer, distributor, or business — we&apos;d love to explore how we can work together.
+              Whether you&apos;re a farmer, distributor, or business, we&apos;d love to explore how we can work together.
             </p>
             <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/contact" className="btn btn-primary">Start a Conversation</Link>

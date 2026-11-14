@@ -12,7 +12,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   if (params.slug !== "gharbeen") return { title: "Not Found" };
-  return { title: "Bottles — Gharbeen Product Catalogue | Commander Group" };
+  return { title: "Bottles | Gharbeen Product Catalogue | Commander Group" };
 }
 
 export default function BottlesPage({ params }: { params: { slug: string } }) {
@@ -35,7 +35,7 @@ export default function BottlesPage({ params }: { params: { slug: string } }) {
             )}
             <p className="intro-eyebrow" style={{ color: "rgba(255,255,255,0.6)" }}>Gharbeen · Product Catalogue</p>
             <h1>Bottles</h1>
-            <p>Liquid formulations — EC, SC, SL &amp; OD — for crop protection and nutrition. {gharbeenBottles.length} products.</p>
+            <p>Liquid formulations (EC, SC, SL &amp; OD) for crop protection and nutrition. {gharbeenBottles.length} products.</p>
           </Reveal>
         </div>
       </section>

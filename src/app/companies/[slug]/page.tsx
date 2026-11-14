@@ -131,7 +131,7 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                     </svg>
                   </div>
                   <h3>Our Mission</h3>
-                  <p>To connect agricultural solutions with the people and fields where their value is realized — making crop protection accessible, understandable and relevant to every grower&apos;s needs.</p>
+                  <p>To connect agricultural solutions with the people and fields where their value is realized, making crop protection accessible, understandable and relevant to every grower&apos;s needs.</p>
                 </div>
               </Reveal>
               <Reveal>
@@ -143,7 +143,7 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                     </svg>
                   </div>
                   <h3>Our Vision</h3>
-                  <p>To become the most trusted agricultural distribution brand in Pakistan — building the commercial bridge between innovation and farmer adoption through channel reach, field engagement and product education.</p>
+                  <p>To become the most trusted agricultural distribution brand in Pakistan, building the commercial bridge between innovation and farmer adoption through channel reach, field engagement and product education.</p>
                 </div>
               </Reveal>
             </div>

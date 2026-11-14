@@ -86,8 +86,8 @@ export const companies: Company[] = [
     tagline: "From Product Innovation to Farmer Adoption",
     description: [
       "Established in 2011, Gharbeen (Pvt.) Ltd. is the market-facing agricultural business of Commander Group. It builds the commercial bridge between agricultural products and farming communities through distribution relationships, field engagement, product education and market development.",
-      "Its proposition is not simply selling inputs — it is making agricultural solutions accessible, understandable and relevant to growers' needs.",
-      "With 5 regional hubs and over 50 territorial offices, our field teams educate farmers at their doorstep — delivering knowledge alongside every product.",
+      "Its proposition is not simply selling inputs, but making agricultural solutions accessible, understandable and relevant to growers' needs.",
+      "With 5 regional hubs and over 50 territorial offices, our field teams educate farmers at their doorstep, delivering knowledge alongside every product.",
     ],
     facts: [
       { label: "Launched", value: "2011" },
@@ -115,7 +115,7 @@ export const companies: Company[] = [
     description: [
       "Commander Seeds (Pvt.) Ltd. focuses on the role of seed choice, crop establishment and agricultural productivity. The seed is the first decision in a successful crop journey.",
       "Our seed categories, sourcing arrangements and quality procedures are designed to deliver proven performance in Pakistan's diverse agro-ecological zones.",
-      "Engineered for higher yields, stronger disease resistance and climate adaptability across Pakistan's most important crops — wheat, cotton, rice and maize.",
+      "Engineered for higher yields, stronger disease resistance and climate adaptability across Pakistan's most important crops: wheat, cotton, rice and maize.",
     ],
     facts: [
       { label: "Division of", value: "Commander Group" },
@@ -217,7 +217,7 @@ export const companies: Company[] = [
 ];
 
 export const vision =
-  "To be Pakistan's most customer-centric conglomerate — a diversified enterprise that anticipates needs, pioneers solutions, and delivers unmatched value across agriculture and energy.";
+  "To be Pakistan's most customer-centric conglomerate: a diversified enterprise that anticipates needs, pioneers solutions, and delivers unmatched value across agriculture and energy.";
 export const mission = [
   "Uphold world-class quality management across every product line",
   "Foster innovation through integrated R&D and strategic partnerships",
@@ -279,15 +279,15 @@ export const chairman = {
 };
 
 export const testimonials = [
-  { name: "Muhammad Aslam", role: "Farmer, Multan", text: "My cotton yield jumped 30% after switching to Commander Agro. Their field training sessions changed the way I approach crop protection — I wouldn't go back." },
+  { name: "Muhammad Aslam", role: "Farmer, Multan", text: "My cotton yield jumped 30% after switching to Commander Agro. Their field training sessions changed the way I approach crop protection. I wouldn't go back." },
   { name: "Haji Bashir Ahmed", role: "Distributor, Lahore", text: "In 12 years of partnership with Gharbeen, I've never had a quality complaint from a single farmer. Their field support team is the best in Pakistan, hands down." },
   { name: "Abdul Rehman", role: "Retailer, Faisalabad", text: "Commander Petrogas delivers on time, every time. In an industry full of supply gaps, their consistency has made them my most trusted energy partner." },
 ];
 
 export const videoTestimonials = [
-  { id: "2731135244007692", title: "Farmer Testimonial — Field Results" },
-  { id: "698635022663553", title: "Farmer Feedback — Crop Protection" },
-  { id: "3987702088130322", title: "Farmer Review — Product Performance" },
+  { id: "2731135244007692", title: "Farmer Testimonial: Field Results" },
+  { id: "698635022663553", title: "Farmer Feedback: Crop Protection" },
+  { id: "3987702088130322", title: "Farmer Review: Product Performance" },
 ];
 
 export const stats = [

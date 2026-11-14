@@ -60,7 +60,7 @@ export const commanderAgroBags: CommanderAgroProduct[] = [
     name: "Orga Pell",
     slug: "orga-pell",
     category: "Organic Fertilizer",
-    active: "Granular NPK (4-3-65 OM) — Van Iperen",
+    active: "Granular NPK (4-3-65 OM), Van Iperen",
     formulation: "Pellet",
     size: "25 kg",
   },

@@ -71,7 +71,7 @@ export default function ContactPage() {
 
                 <div className="contact-detail">
                   <h4>Working Hours</h4>
-                  <p>Monday — Saturday: 9:00 AM — 6:00 PM</p>
+                  <p>Monday to Saturday: 9:00 AM - 6:00 PM</p>
                 </div>
 
                 <div className="contact-detail">
