@@ -35,7 +35,7 @@ export default function FeedbackPage() {
             <div style={{ textAlign: "center", marginBottom: 48 }}>
               <p className="intro-eyebrow">Choose a Category</p>
               <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, letterSpacing: "-0.02em" }}>How can we help?</h2>
-              <p style={{ fontSize: 15, color: "var(--fg-dim)", maxWidth: 480, margin: "12px auto 0", lineHeight: 1.6 }}>Select an option below and a form will open for you to share your feedback.</p>
+              <p style={{ fontSize: 15, color: "var(--fg-dim)", maxWidth: 480, margin: "12px auto 0", lineHeight: 1.6 }}>Select an option below to share your feedback.</p>
             </div>
           </Reveal>
           <Reveal>
@@ -80,32 +80,17 @@ export default function FeedbackPage() {
       {/* ── Feedback Form Modal ── */}
       {selected && (
         <div className="modal-overlay" onClick={close}>
-          <div className="modal-content modal-content--form" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-content modal-content--feedback" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={close}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: 20, height: 20 }}><path d="M18 6L6 18M6 6l12 12" /></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: 18, height: 18 }}><path d="M18 6L6 18M6 6l12 12" /></svg>
             </button>
 
-            <div className="modal-header">
-              <div className="modal-header-icon">
-                {selected === "suggestion" ? (
-                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="24" cy="20" r="14" stroke="var(--accent)" strokeWidth="2" fill="none" />
-                    <path d="M24 12V20L30 24" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" />
-                    <path d="M18 34H30V38C30 40.2 28.2 42 26 42H22C19.8 42 18 40.2 18 38V34Z" stroke="var(--accent)" strokeWidth="2" fill="none" />
-                  </svg>
-                ) : (
-                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="24" cy="24" r="20" stroke="var(--accent)" strokeWidth="2" fill="none" />
-                    <path d="M24 14V28" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" />
-                    <circle cx="24" cy="34" r="2" fill="var(--accent)" />
-                  </svg>
-                )}
-              </div>
+            <div className="modal-header modal-header--compact">
               <h3>{selected === "suggestion" ? "Share Your Suggestion" : "Submit Your Complaint"}</h3>
-              <p>{selected === "suggestion" ? "We appreciate your ideas. Tell us how we can improve." : "We take every concern seriously. Please share the details."}</p>
+              <p>{selected === "suggestion" ? "Tell us how we can improve." : "Please share the details of your concern."}</p>
             </div>
 
-            <form>
+            <form className="modal-form-compact">
               <div className="form-row">
                 <div className="form-group">
                   <label>Name</label>
@@ -122,9 +107,9 @@ export default function FeedbackPage() {
                   <input type="tel" placeholder="+92 300 1234567" />
                 </div>
                 <div className="form-group">
-                  <label>Related Company</label>
+                  <label>Company</label>
                   <select defaultValue="">
-                    <option value="" disabled>Select a company (optional)</option>
+                    <option value="" disabled>Select (optional)</option>
                     <option>Commander Agro</option>
                     <option>Gharbeen</option>
                     <option>Gharbeen Seeds</option>
@@ -137,13 +122,13 @@ export default function FeedbackPage() {
               </div>
               <div className="form-group">
                 <label>Subject</label>
-                <input type="text" placeholder={selected === "suggestion" ? "Brief title for your suggestion" : "Brief title for your complaint"} required />
+                <input type="text" placeholder={selected === "suggestion" ? "Title for your suggestion" : "Title for your complaint"} required />
               </div>
               <div className="form-group">
                 <label>Details</label>
                 <textarea
-                  placeholder={selected === "suggestion" ? "Please describe your suggestion in detail..." : "Please describe your complaint in detail..."}
-                  rows={4}
+                  placeholder={selected === "suggestion" ? "Describe your suggestion..." : "Describe your complaint..."}
+                  rows={3}
                   required
                 />
               </div>

@@ -1480,6 +1480,10 @@ body::after {
   transition: border-color 0.3s, background 0.3s;
   background: var(--glass-bg);
 }
+.cv-dropzone--compact {
+  padding: 14px 18px;
+  text-align: left;
+}
 .cv-dropzone:hover, .cv-dropzone--active {
   border-color: var(--accent);
   background: rgba(61,184,106,0.05);
@@ -1491,30 +1495,51 @@ body::after {
 }
 .cv-dropzone-icon { margin-bottom: 8px; }
 .cv-dropzone-success { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.cv-dropzone-row {
+  display: flex; align-items: center; gap: 12px;
+}
 
-/* ── Career Steps ── */
-.career-steps {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-}
-.career-step-card {
+/* ── Career Guide Button ── */
+.career-guide-btn {
+  display: inline-flex; align-items: center; gap: 10px;
   background: var(--glass-bg); border: 1px solid var(--glass-border);
+  border-radius: var(--radius); padding: 16px 28px;
+  font-size: 15px; font-weight: 700; color: var(--accent);
+  cursor: pointer; transition: all 0.3s;
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  border-radius: var(--radius); padding: 32px 24px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  letter-spacing: -0.01em;
 }
-.career-step-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+.career-guide-btn:hover {
+  background: rgba(61,184,106,0.08); border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(61,184,106,0.15);
 }
-.career-step-icon { margin-bottom: 12px; }
-.career-step-icon svg { width: 48px; height: 48px; }
-.career-step-num {
-  display: block; font-size: 11px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px;
+
+/* ── Guide Modal ── */
+.modal-content--guide { max-width: 540px; padding: 28px 28px 24px; }
+.guide-steps { display: flex; flex-direction: column; gap: 18px; margin-bottom: 20px; }
+.guide-step {
+  display: flex; gap: 14px; align-items: flex-start;
 }
-.career-step-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
-.career-step-card p { font-size: 13px; color: var(--fg-dim); line-height: 1.6; }
+.guide-step-num {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+}
+.guide-step strong {
+  display: block; font-size: 14px; font-weight: 700; margin-bottom: 4px;
+}
+.guide-step p {
+  font-size: 13px; color: var(--fg-dim); line-height: 1.6; margin: 0;
+}
+.guide-note {
+  display: flex; align-items: flex-start; gap: 10px;
+  background: rgba(61,184,106,0.06); border: 1px solid rgba(61,184,106,0.15);
+  border-radius: var(--radius-sm); padding: 12px 16px;
+  font-size: 13px; color: var(--fg-dim); line-height: 1.5;
+}
 
 /* ── Modal ── */
 .modal-overlay {
@@ -1541,6 +1566,20 @@ body::after {
   animation: modalSlideUp 0.3s ease;
 }
 .modal-content--form { max-width: 580px; }
+.modal-content--feedback { max-width: 560px; padding: 24px 24px 20px; }
+.modal-header--compact {
+  margin-bottom: 14px; padding-bottom: 12px;
+}
+.modal-header--compact h3 { font-size: 19px; margin-bottom: 4px; }
+.modal-header--compact p { font-size: 13px; }
+.modal-form-compact .form-group { margin-bottom: 10px; }
+.modal-form-compact .form-row { gap: 12px; margin-bottom: 0; }
+.modal-form-compact .form-row .form-group { margin-bottom: 0; }
+.modal-form-compact textarea { resize: none; }
+.modal-form-compact label { font-size: 11px; margin-bottom: 3px; }
+.modal-form-compact input,
+.modal-form-compact select,
+.modal-form-compact textarea { padding: 8px 12px; font-size: 13px; }
 .modal-close {
   position: absolute; top: 14px; right: 14px;
   background: var(--glass-bg); border: 1px solid var(--glass-border);
@@ -1588,12 +1627,15 @@ body::after {
 .feedback-card:hover .feedback-card-action { letter-spacing: 0.03em; }
 
 @media (max-width: 768px) {
-  .career-steps { grid-template-columns: 1fr; gap: 16px; }
+  .guide-steps { gap: 14px; }
+  .modal-content--guide { padding: 24px 20px 20px; }
 }
 @media (max-width: 600px) {
   .feedback-cards { grid-template-columns: 1fr; }
   .modal-content { padding: 24px 20px; margin: 12px; }
+  .modal-content--feedback { padding: 22px 18px 20px; }
   .modal-header { margin-bottom: 20px; padding-bottom: 16px; }
+  .modal-header--compact { margin-bottom: 14px; padding-bottom: 12px; }
   .mv-grid { grid-template-columns: 1fr; }
 }
 
