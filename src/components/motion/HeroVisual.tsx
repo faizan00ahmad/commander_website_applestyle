@@ -19,14 +19,16 @@ export default function HeroVisual() {
         <video
           ref={videoRef}
           className={`hero-video${loaded ? " loaded" : ""}`}
-          src={asset("/img/hero-video.mp4")}
+          poster={asset("/video/hero-poster.jpg")}
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
           onLoadedData={() => setLoaded(true)}
-        />
+        >
+          <source src={asset("/video/hero-bg.mp4")} type="video/mp4" />
+        </video>
       </div>
       <div className="hero-overlay" />
     </div>
