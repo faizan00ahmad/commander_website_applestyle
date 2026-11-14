@@ -110,8 +110,8 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
         </section>
       )}
 
-      {/* ── Mission & Vision (Gharbeen) / About Card (others) ── */}
-      {co.slug === "gharbeen" ? (
+      {/* ── Mission & Vision ── */}
+      {co.mission && co.vision && (
         <section className="inner-section">
           <div className="container">
             <Reveal>
@@ -131,7 +131,7 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                     </svg>
                   </div>
                   <h3>Our Mission</h3>
-                  <p>To connect agricultural solutions with the people and fields where their value is realized, making crop protection accessible, understandable and relevant to every grower&apos;s needs.</p>
+                  <p>{co.mission}</p>
                 </div>
               </Reveal>
               <Reveal>
@@ -143,37 +143,38 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                     </svg>
                   </div>
                   <h3>Our Vision</h3>
-                  <p>To become the most trusted agricultural distribution brand in Pakistan, building the commercial bridge between innovation and farmer adoption through channel reach, field engagement and product education.</p>
+                  <p>{co.vision}</p>
                 </div>
               </Reveal>
             </div>
           </div>
         </section>
-      ) : (
-        <section className="inner-section">
-          <div className="container">
-            <Reveal>
-              <div className="co-intro-card">
-                <div className="co-intro-left">
-                  {co.logo && (
-                    <div className="co-intro-logo">
-                      <img src={asset(co.logo)} alt={co.short} />
-                    </div>
-                  )}
-                  <p className="intro-eyebrow">About {co.short}</p>
-                  <h2 style={{ fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 20, lineHeight: 1.2 }}>What we do</h2>
-                  {co.description.map((p, i) => (
-                    <p key={i} className="co-intro-para">{p}</p>
-                  ))}
-                </div>
-                <div className="co-intro-img">
-                  <img src={asset(co.cover)} alt={co.name} />
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </section>
       )}
+
+      {/* ── About Card ── */}
+      <section className="inner-section">
+        <div className="container">
+          <Reveal>
+            <div className="co-intro-card">
+              <div className="co-intro-left">
+                {co.logo && (
+                  <div className="co-intro-logo">
+                    <img src={asset(co.logo)} alt={co.short} />
+                  </div>
+                )}
+                <p className="intro-eyebrow">About {co.short}</p>
+                <h2 style={{ fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 20, lineHeight: 1.2 }}>What we do</h2>
+                {co.description.map((p, i) => (
+                  <p key={i} className="co-intro-para">{p}</p>
+                ))}
+              </div>
+              <div className="co-intro-img">
+                <img src={asset(co.cover)} alt={co.name} />
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       {/* ── Capability Pillars ── */}
       {co.capabilities && co.capabilities.length > 0 && (

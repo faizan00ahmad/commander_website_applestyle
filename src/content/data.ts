@@ -17,6 +17,8 @@ export const nav = [
   { label: "About", href: "/about" },
   { label: "Companies", href: "/companies", children: true },
   { label: "Leadership", href: "/leadership" },
+  { label: "Career", href: "/career" },
+  { label: "Feedback", href: "/feedback" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -36,6 +38,8 @@ export type Company = {
   comingSoon?: boolean;
   capabilities?: string[];
   audiences?: string[];
+  mission?: string;
+  vision?: string;
 };
 
 const agro = Array.from({ length: 12 }, (_, i) => `/img/commander-agro-${String(i + 1).padStart(2, "0")}-thumb.jpg`);
@@ -72,6 +76,8 @@ export const companies: Company[] = [
       { name: "Weedicides", image: "/img/commander-agro-05.jpg" },
     ],
     gallery: agro,
+    mission: "To manufacture and deliver high-quality agrochemical formulations that empower Pakistan's agricultural sector with reliable, effective crop protection solutions.",
+    vision: "To be the leading agrochemical formulation company in Pakistan, setting the benchmark for quality, innovation and operational excellence in crop protection manufacturing.",
     capabilities: ["Formulation expertise", "Technical sourcing", "Crop-protection portfolio", "Industrial handling & packaging"],
     audiences: ["Importers & international principals", "Agricultural distributors", "Institutional buyers"],
   },
@@ -100,20 +106,22 @@ export const companies: Company[] = [
       { name: "Rommel", image: "/img/rommel.jpg" },
     ],
     gallery: gharbeenImgs,
+    mission: "To connect agricultural solutions with the people and fields where their value is realized, making crop protection accessible, understandable and relevant to every grower's needs.",
+    vision: "To become the most trusted agricultural distribution brand in Pakistan, building the commercial bridge between innovation and farmer adoption through channel reach, field engagement and product education.",
     capabilities: ["Dealer relationships", "Field sales", "Farmer engagement", "Product awareness", "Crop nutrition & soil-support portfolio"],
     audiences: ["Farmers", "Agro-dealers", "Distributors", "Regional agricultural markets"],
   },
   {
     slug: "gharbeen-seeds",
-    name: "Commander Seeds (Pvt) Ltd.",
-    short: "Commander Seeds",
+    name: "Gharbeen Seeds (Pvt) Ltd.",
+    short: "Gharbeen Seeds",
     sector: "Seeds · Agriculture",
     theme: "seeds",
     logo: "/img/gharbeen-seeds-logo.webp",
     cover: "/img/commander-agro-04.jpg",
     tagline: "Strong Beginnings for Tomorrow's Harvests",
     description: [
-      "Commander Seeds (Pvt.) Ltd. focuses on the role of seed choice, crop establishment and agricultural productivity. The seed is the first decision in a successful crop journey.",
+      "Gharbeen Seeds (Pvt.) Ltd. focuses on the role of seed choice, crop establishment and agricultural productivity. The seed is the first decision in a successful crop journey.",
       "Our seed categories, sourcing arrangements and quality procedures are designed to deliver proven performance in Pakistan's diverse agro-ecological zones.",
       "Engineered for higher yields, stronger disease resistance and climate adaptability across Pakistan's most important crops: wheat, cotton, rice and maize.",
     ],
@@ -128,6 +136,8 @@ export const companies: Company[] = [
       { name: "Rice Seeds", image: "/img/commander-agro-08.jpg" },
     ],
     gallery: [],
+    mission: "To provide farmers with certified, high-performance seeds that establish stronger crops and maximize yield potential across Pakistan's diverse growing conditions.",
+    vision: "To become Pakistan's most reliable seed brand, recognized for quality genetics, consistent germination and climate-adapted varieties for every major crop.",
     capabilities: ["Seed categories", "Quality approach", "Crop suitability", "Dealer access"],
     audiences: ["Growers", "Agricultural dealers", "Seed-sector partners"],
   },
@@ -154,6 +164,8 @@ export const companies: Company[] = [
       { name: "Soil Solutions", image: "/img/commander-agro-11.jpg" },
     ],
     gallery: [],
+    mission: "To bridge cutting-edge agricultural science with practical on-farm application, empowering Pakistani farmers with precision tools and knowledge.",
+    vision: "To lead the next generation of agricultural solutions in Pakistan through innovation, data-driven crop management and sustainable farming practices.",
     capabilities: ["Advanced crop-protection formulations", "Precision-agriculture consulting", "Integrated pest management", "Soil health diagnostics"],
     audiences: ["Progressive farmers", "Agricultural consultants", "Institutional buyers"],
   },
@@ -183,6 +195,8 @@ export const companies: Company[] = [
       { name: "Distribution", image: "/img/petrogas-05.jpg" },
     ],
     gallery: petro,
+    mission: "To deliver safe, reliable and accessible LPG energy solutions through disciplined operations, robust infrastructure and a commitment to every customer's needs.",
+    vision: "To be Pakistan's most trusted LPG enterprise, setting industry standards in safety, operational excellence and energy distribution reliability.",
     capabilities: ["LPG storage & handling", "Domestic & commercial cylinder filling", "Distribution coordination", "Operational safety focus"],
     audiences: ["LPG distributors", "Hospitality & commercial buyers", "Domestic supply channels"],
   },
@@ -211,6 +225,8 @@ export const companies: Company[] = [
       { name: "Infrastructure", image: "/img/petrogas-08.jpg" },
     ],
     gallery: [],
+    mission: "To expand energy access and supply-chain efficiency across Pakistan through disciplined investment, operational expertise and forward-looking infrastructure development.",
+    vision: "To become a defining name in Pakistan's energy sector, recognized for operational discipline, strategic partnerships and sustainable growth in a changing energy landscape.",
     capabilities: ["Energy-sector operations", "Infrastructure development", "Strategic partnerships", "Market development"],
     audiences: ["Energy-sector counterparties", "Prospective partners", "Institutional investors"],
   },

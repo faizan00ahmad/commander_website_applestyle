@@ -37,6 +37,8 @@ export default function Header() {
             </div>
           </div>
           <Link href="/leadership" onClick={() => setOpen(false)}>Leadership</Link>
+          <Link href="/career" onClick={() => setOpen(false)}>Career</Link>
+          <Link href="/feedback" onClick={() => setOpen(false)}>Feedback</Link>
           <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
         </nav>
         <div className="nav-actions">
