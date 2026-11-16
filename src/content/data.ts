@@ -9,7 +9,6 @@ export const site = {
   fax: "+92 61 6514 089",
   emails: ["info@comdgroup.com", "hr@comdgroup.com", "Usman@comdgroup.com"],
   facebook: "https://www.facebook.com/COMMANDERGROUPMULTAN",
-  instagram: "https://www.instagram.com/commander_group/",
 };
 
 export const nav = [
@@ -134,6 +133,7 @@ export const companies: Company[] = [
       { name: "Wheat Seeds", image: "/img/commander-agro-04.jpg" },
       { name: "Cotton Seeds", image: "/img/commander-agro-06.jpg" },
       { name: "Rice Seeds", image: "/img/commander-agro-08.jpg" },
+      { name: "Maize Seeds", image: "/img/commander-agro-10.jpg" },
     ],
     gallery: [],
     mission: "To develop a trusted seed-focused enterprise guided by product suitability, quality-conscious practices, agricultural understanding and meaningful relationships with growers and industry partners. Our ambition is to support confident planting decisions, encourage responsible agricultural development and create long-term value for farming communities through a customer-focused approach.",

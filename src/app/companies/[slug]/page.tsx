@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import { companies } from "@/content/data";
-import { gharbeenBottles, gharbeenSachets } from "@/content/gharbeen-products";
+import { gharbeenProducts, gharbeenCategories } from "@/content/gharbeen-products";
 import { commanderAgroBags } from "@/content/commander-agro-products";
 import type { Metadata } from "next";
 
@@ -52,12 +52,7 @@ const companyTeams: Record<string, { name: string; role: string }[]> = {
     { name: "Mr. Shahbaz Ali", role: "Plant Manager" },
     { name: "Mr. Junaid Arshad", role: "Safety Officer" },
   ],
-  "rafco-energy": [
-    { name: "Mr. Usman Rafique", role: "Director" },
-    { name: "Mr. Saad Rafique", role: "Director" },
-    { name: "Mr. Hassan Raza", role: "Head of Projects" },
-    { name: "Mr. Sohail Ahmed", role: "Operations Manager" },
-  ],
+  "rafco-energy": [],
 };
 
 export default function CompanyPage({ params }: { params: { slug: string } }) {
@@ -168,8 +163,8 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                   <p key={i} className="co-intro-para">{p}</p>
                 ))}
               </div>
-              <div className="co-intro-img">
-                <img src={asset(co.cover)} alt={co.name} />
+              <div className={`co-intro-img${co.logo ? " co-intro-img--logo" : ""}`}>
+                <img src={asset(co.logo || co.cover)} alt={co.name} />
               </div>
             </div>
           </Reveal>
@@ -236,58 +231,40 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                 <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, letterSpacing: "-0.02em" }}>Product Catalogue</h2>
               </div>
             </Reveal>
-
-            <Reveal>
-              <div className="catalogue-preview-header">
-                <h3>Bottles</h3>
-                <span className="catalogue-preview-count">{gharbeenBottles.length} Products</span>
-              </div>
-            </Reveal>
           </div>
-          <div className="catalogue-marquee">
-            <div className="catalogue-marquee-track" style={{ "--marquee-items": gharbeenBottles.length } as React.CSSProperties}>
-              {[...gharbeenBottles, ...gharbeenBottles].map((p, i) => (
-                <div className="catalogue-preview-card" key={`${p.slug}-${i}`}>
-                  <div className="catalogue-preview-img">
-                    <img src={asset(`/img/gharbeen-bottles/${p.slug}.webp`)} alt={p.name} loading="lazy" />
-                  </div>
-                  <h4>{p.name}</h4>
-                  <span className={`catalogue-badge catalogue-badge--${p.category.toLowerCase().replace(/ /g, "-")}`}>{p.category}</span>
+          {gharbeenCategories.map((cat, ci) => {
+            const items = gharbeenProducts.filter((p) => p.category === cat);
+            if (items.length === 0) return null;
+            return (
+              <div key={cat}>
+                <div className="container">
+                  <Reveal>
+                    <div className="catalogue-preview-header" style={ci > 0 ? { marginTop: 64 } : undefined}>
+                      <h3>{cat}</h3>
+                      <span className="catalogue-preview-count">{items.length} Products</span>
+                    </div>
+                  </Reveal>
                 </div>
-              ))}
-            </div>
-          </div>
+                <div className="catalogue-marquee">
+                  <div className={`catalogue-marquee-track${ci % 2 === 1 ? " catalogue-marquee-track--reverse" : ""}`} style={{ "--marquee-items": items.length } as React.CSSProperties}>
+                    {[...items, ...items].map((p, i) => (
+                      <div className="catalogue-preview-card" key={`${p.slug}-${cat}-${i}`}>
+                        <div className="catalogue-preview-img">
+                          <img src={asset(`/img/${p.imgDir}/${p.slug}.webp`)} alt={p.name} loading="lazy" />
+                        </div>
+                        <h4>{p.name}</h4>
+                        <span className={`catalogue-badge catalogue-badge--${cat.toLowerCase().replace(/ /g, "-")}`}>{cat}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
           <div className="container">
             <Reveal>
               <div className="catalogue-preview-cta">
-                <Link href="/companies/gharbeen/bottles" className="btn btn-primary">See All Bottles &rarr;</Link>
-              </div>
-            </Reveal>
-
-            <Reveal>
-              <div className="catalogue-preview-header" style={{ marginTop: 64 }}>
-                <h3>Sachets</h3>
-                <span className="catalogue-preview-count">{gharbeenSachets.length} Products</span>
-              </div>
-            </Reveal>
-          </div>
-          <div className="catalogue-marquee">
-            <div className="catalogue-marquee-track catalogue-marquee-track--reverse" style={{ "--marquee-items": gharbeenSachets.length } as React.CSSProperties}>
-              {[...gharbeenSachets, ...gharbeenSachets].map((p, i) => (
-                <div className="catalogue-preview-card" key={`${p.slug}-${i}`}>
-                  <div className="catalogue-preview-img">
-                    <img src={asset(`/img/gharbeen-sachets/${p.slug}.webp`)} alt={p.name} loading="lazy" />
-                  </div>
-                  <h4>{p.name}</h4>
-                  <span className={`catalogue-badge catalogue-badge--${p.category.toLowerCase().replace(/ /g, "-")}`}>{p.category}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="container">
-            <Reveal>
-              <div className="catalogue-preview-cta">
-                <Link href="/companies/gharbeen/sachets" className="btn btn-primary">See All Sachets &rarr;</Link>
+                <Link href="/companies/gharbeen/catalogue" className="btn btn-primary">View Full Catalogue &rarr;</Link>
               </div>
             </Reveal>
           </div>
@@ -307,6 +284,22 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
 
             <Reveal>
               <div className="catalogue-preview-header">
+                <h3>Formulation Types</h3>
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="formulation-types-grid">
+                {["EC (Emulsifiable Concentrate)", "SC (Suspension Concentrate)", "WP (Wettable Powder)", "WG (Water Dispersible Granule)", "SP (Soluble Powder)", "SL (Soluble Liquid)", "GR (Granule)", "OD (Oil Dispersion)"].map((ft) => (
+                  <div className="formulation-type-card" key={ft}>
+                    <span className="formulation-type-abbr">{ft.split(" (")[0]}</span>
+                    <span className="formulation-type-name">{ft.split(" (")[1]?.replace(")", "")}</span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal>
+              <div className="catalogue-preview-header" style={{ marginTop: 64 }}>
                 <h3>Fertilizer Bags</h3>
                 <span className="catalogue-preview-count">{commanderAgroBags.length} Products</span>
               </div>
@@ -331,6 +324,50 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                 <Link href="/companies/commander-agro/bags" className="btn btn-primary">See All Bags &rarr;</Link>
               </div>
             </Reveal>
+          </div>
+        </section>
+      )}
+
+      {/* ── Project Plan (Rafco Energy) ── */}
+      {co.slug === "rafco-energy" && (
+        <section className="inner-section inner-section--alt">
+          <div className="container">
+            <Reveal>
+              <div style={{ textAlign: "center", marginBottom: 48 }}>
+                <p className="intro-eyebrow">Strategic Direction</p>
+                <h2 style={{ fontSize: "clamp(28px, 4vw, 40px)", fontWeight: 700, letterSpacing: "-0.02em" }}>Project Plan</h2>
+              </div>
+            </Reveal>
+            <div className="project-plan-grid">
+              <Reveal>
+                <div className="project-plan-card">
+                  <span className="project-plan-phase">Phase 1</span>
+                  <h4>Market Assessment</h4>
+                  <p>Identify energy sector opportunities, evaluate demand patterns and assess infrastructure requirements across target markets.</p>
+                </div>
+              </Reveal>
+              <Reveal>
+                <div className="project-plan-card">
+                  <span className="project-plan-phase">Phase 2</span>
+                  <h4>Infrastructure Development</h4>
+                  <p>Invest in energy infrastructure, establish operational facilities and build supply chain capabilities for sustainable operations.</p>
+                </div>
+              </Reveal>
+              <Reveal>
+                <div className="project-plan-card">
+                  <span className="project-plan-phase">Phase 3</span>
+                  <h4>Strategic Partnerships</h4>
+                  <p>Forge partnerships with energy sector stakeholders, secure supply agreements and develop distribution networks.</p>
+                </div>
+              </Reveal>
+              <Reveal>
+                <div className="project-plan-card">
+                  <span className="project-plan-phase">Phase 4</span>
+                  <h4>Expansion &amp; Growth</h4>
+                  <p>Scale operations across new markets, diversify energy portfolio and pursue sustainable growth opportunities.</p>
+                </div>
+              </Reveal>
+            </div>
           </div>
         </section>
       )}
