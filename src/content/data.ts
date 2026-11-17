@@ -56,7 +56,7 @@ export const companies: Company[] = [
     short: "Commander Agro",
     sector: "Agro Chemicals · Manufacturing",
     theme: "agro",
-    logo: "/img/commander-agro-logo-new.webp",
+    logo: "/img/commander-agro-logo.png",
     cover: "/img/commander-agro-02.jpg",
     tagline: "The Formulation Strength Behind Productive Agriculture",
     description: [
@@ -86,18 +86,18 @@ export const companies: Company[] = [
     short: "Gharbeen",
     sector: "Agro Chemicals · Distribution",
     theme: "gharbeen",
-    logo: "/img/gharbeen-logo-new.webp",
+    logo: "/img/gharbeen-logo.png",
     cover: "/img/Armata.jpg",
     tagline: "From Product Innovation to Farmer Adoption",
     description: [
       "Established in 2011, Gharbeen (Pvt.) Ltd. is the market-facing agricultural business of Commander Group. It builds the commercial bridge between agricultural products and farming communities through distribution relationships, field engagement, product education and market development.",
       "Its proposition is not simply selling inputs, but making agricultural solutions accessible, understandable and relevant to growers' needs.",
-      "With 5 regional hubs and over 50 territorial offices, our field teams educate farmers at their doorstep, delivering knowledge alongside every product.",
+      "Our field teams educate farmers at their doorstep, delivering knowledge alongside every product.",
     ],
     facts: [
       { label: "Launched", value: "2011" },
       { label: "Regional hubs", value: "5" },
-      { label: "Field offices", value: "50+" },
+      { label: "Reach", value: "Nationwide" },
     ],
     products: [
       { name: "Armata", image: "/img/Armata.jpg" },
@@ -176,18 +176,18 @@ export const companies: Company[] = [
     short: "Commander Petrogas",
     sector: "Energy · LPG",
     theme: "petrogas",
-    logo: "/img/petrogas-logo-new.webp",
+    logo: "/img/petrogas-logo.png",
     cover: "/img/petrogas.jpg",
     tagline: "Energy Delivered with Operational Confidence",
     description: [
       "Established in 2017, Commander Petrogas (Pvt.) Ltd. is Commander Group's LPG-focused enterprise, operating from Multan. Its business encompasses LPG handling, storage, cylinder filling and distribution.",
       "In a market where reliable availability, safe handling and effective distribution matter, the company positions its infrastructure and operational discipline as the foundation of dependable service.",
-      "With 9,000+ MT in annual sales and PKR 2.1 Billion in revenue, we hold the distinction of being Pakistan's only LPG facility with both ISO 9000 and ISO 14000 certifications.",
+      "We hold the distinction of being Pakistan's only LPG facility with both ISO 9000 and ISO 14000 certifications.",
     ],
     facts: [
       { label: "Established", value: "2017" },
       { label: "Daily capacity", value: "300 MT" },
-      { label: "Annual volume", value: "9,000+ MT" },
+      { label: "Certifications", value: "ISO 9000 & 14000" },
       { label: "Revenue", value: "PKR 2.1B" },
     ],
     products: [
@@ -242,11 +242,11 @@ export const mission = [
 ];
 
 export const chairman = {
-  name: "Late Col. M Rafique",
+  name: "Col. Muhammad Rafique (late)",
   role: "Founding Chairman | Commander Group",
-  memorial: "In Loving Memory of Late Col. M Rafique",
+  memorial: "In Loving Memory of Col. Muhammad Rafique (late)",
   memorialNote:
-    "The following message reflects the vision, values, and enduring legacy of our respected Founding Chairman, Late Col. M Rafique, whose leadership laid the foundation for Commander Group’s continued success.",
+    "The following message reflects the vision, values, and enduring legacy of our respected Founding Chairman, Col. Muhammad Rafique (late), whose leadership laid the foundation for Commander Group’s continued success.",
   excerpt:
     "With profound gratitude to Almighty Allah, I reflect on the journey of Commander Group since its establishment in 1996. What began with a clear vision and a determination to serve has grown into a diversified group of businesses, built on the enduring values of integrity, commitment and excellence.",
   letter: [
@@ -256,12 +256,12 @@ export const chairman = {
     "Above all, trust remains the foundation of Commander Group. To our customers, business partners, employees and stakeholders, I reaffirm our commitment to act with integrity, honor our responsibilities and pursue sustainable growth that creates lasting value. With the blessings of Almighty Allah, we look forward to the next chapter of progress and shared success. Insha’Allah.",
   ],
   regards: "With warm regards,",
-  signer: "Late Col. M Rafique",
+  signer: "Col. Muhammad Rafique (late)",
   signerRole: "",
   bios: [
     {
       name: "Choudhry Usman Rafique",
-      role: "Chief Executive Officer | Commander Group",
+      role: "Chairman | Commander Group",
       image: "/img/ceo.gif",
       paras: [
         "At Commander Petrogas, our ambition is to build an organization recognized for reliability, forward-thinking leadership and lasting customer relationships. In a rapidly changing business environment, success depends on our ability to anticipate market needs, respond decisively and consistently deliver on our commitments.",
@@ -272,7 +272,7 @@ export const chairman = {
     },
     {
       name: "Mrs. Samina Rafique",
-      role: "Director | Commander Petrogas (Pvt.) Ltd.",
+      role: "Director Operations | Commander Petrogas (Pvt.) Ltd.",
       image: "/img/ceo.gif",
       paras: [
         "Mrs. Samina Rafique brings a thoughtful combination of corporate leadership, management experience and a longstanding commitment to social responsibility to her role as Director of Commander Petrogas (Pvt.) Ltd.",
@@ -283,7 +283,7 @@ export const chairman = {
     },
     {
       name: "Mrs. Zoya Usman",
-      role: "Director | Commander Petrogas (Pvt.) Ltd.",
+      role: "Director Admin | Commander Petrogas (Pvt.) Ltd.",
       image: "/img/ceo.gif",
       paras: [
         "At Commander Petrogas, we believe that lasting success is built on a clear vision, the confidence of our customers, and an unwavering commitment to safety, quality, and service. As we look toward the future, our aspiration is to take the strength of our existing operations beyond the plant and closer to the communities and businesses we serve.",
@@ -310,8 +310,7 @@ export const videoTestimonials = [
 export const stats = [
   { value: 1996, label: "Year Established", plain: true },
   { value: 25, suffix: "+", label: "Years of Trust" },
-  { value: 55, suffix: "", label: "Offices Nationwide" },
-  { value: 9000, suffix: "+ MT", label: "LPG Sold Yearly" },
+  { value: 2, suffix: "", label: "Partners" },
 ];
 
 export const distributors = [

@@ -88,7 +88,7 @@ export default function AboutPage() {
                 <p className="cc-eyebrow">Our Story</p>
                 <h3>From a single company to a diversified conglomerate</h3>
                 <p>Founded in 1996, Commander Group began as a crop-protection company in Multan. What started as a single entity importing and formulating pesticides for Pakistani farmers has grown into a six-company conglomerate spanning agro chemicals, seeds, petrochemicals, and energy infrastructure.</p>
-                <p style={{ marginTop: 16, color: "var(--fg-dim)", lineHeight: 1.7 }}>Today, with 55+ offices nationwide, ISO-certified manufacturing facilities, and a team of over 500 professionals, Commander Group is one of Pakistan&apos;s most respected names in agriculture and energy.</p>
+                <p style={{ marginTop: 16, color: "var(--fg-dim)", lineHeight: 1.7 }}>Today, with ISO-certified manufacturing facilities and a team of over 500 professionals, Commander Group is one of Pakistan&apos;s most respected names in agriculture and energy.</p>
               </Reveal>
             </div>
             <div className="cc-img-side">

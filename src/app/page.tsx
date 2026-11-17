@@ -56,7 +56,7 @@ export default function Home() {
                   Our companies bring specialized capabilities to distinct markets, from agrochemical formulation and agricultural distribution to LPG operations, united by trusted relationships and responsible operations.
                 </p>
                 <p className="intro-sub">
-                  With 55+ offices nationwide, ISO-certified manufacturing facilities, and a team of over 500 professionals, we serve thousands of farmers and businesses, delivering expertise, reliability, and long-term value across every sector we operate in.
+                  With ISO-certified manufacturing facilities and a team of over 500 professionals, we serve thousands of farmers and businesses, delivering expertise, reliability, and long-term value across every sector we operate in.
                 </p>
                 <div className="intro-highlights">
                   <div className="intro-highlight">
@@ -68,8 +68,8 @@ export default function Home() {
                     <span className="intro-highlight-label">Years</span>
                   </div>
                   <div className="intro-highlight">
-                    <span className="intro-highlight-num">55+</span>
-                    <span className="intro-highlight-label">Offices</span>
+                    <span className="intro-highlight-num">500+</span>
+                    <span className="intro-highlight-label">Team</span>
                   </div>
                 </div>
               </div>

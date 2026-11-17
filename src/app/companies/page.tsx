@@ -54,7 +54,7 @@ export default function CompaniesPage() {
                 <p className="intro-eyebrow">About the Group</p>
                 <h2 style={{ fontSize: "clamp(24px, 3.5vw, 36px)", fontWeight: 700, letterSpacing: "-0.02em", marginBottom: 20, lineHeight: 1.2 }}>One vision. Six companies. Endless impact.</h2>
                 <p className="co-intro-para">Founded in 1996, Commander Group has grown from a single crop-protection company into a diversified conglomerate spanning six companies across agriculture, petrochemicals, seeds, and energy.</p>
-                <p className="co-intro-para">With 55+ offices nationwide, ISO-certified manufacturing facilities, and a team of over 500 professionals, we serve thousands of farmers and businesses, delivering innovation, reliability, and trust across every sector we operate in.</p>
+                <p className="co-intro-para">With ISO-certified manufacturing facilities and a team of over 500 professionals, we serve thousands of farmers and businesses, delivering innovation, reliability, and trust across every sector we operate in.</p>
                 <p className="co-intro-para">Our group holds ISO 9000, ISO 14000, and ISO 17025 certifications, a testament to our commitment to world-class manufacturing and environmental standards.</p>
               </div>
               <div className="co-intro-img">
