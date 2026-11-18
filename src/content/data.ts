@@ -116,7 +116,6 @@ export const companies: Company[] = [
     short: "Gharbeen Seeds",
     sector: "Seeds · Agriculture",
     theme: "seeds",
-    logo: "/img/gharbeen-seeds-logo.webp",
     cover: "/img/commander-agro-04.jpg",
     tagline: "Strong Beginnings for Tomorrow's Harvests",
     description: [
@@ -207,7 +206,6 @@ export const companies: Company[] = [
     short: "Rafco Energy",
     sector: "Energy · Infrastructure",
     theme: "energy",
-    logo: "/img/rafco-energy-logo.webp",
     cover: "/img/petrogas-05.jpg",
     tagline: "Built for Opportunity in a Changing Energy Landscape",
     description: [

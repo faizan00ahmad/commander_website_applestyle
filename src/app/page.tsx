@@ -127,7 +127,7 @@ export default function Home() {
                   </div>
                 </Reveal>
               </div>
-              <div className="cc-img-side cc-img-side--logo">
+              <div className={`cc-img-side${c.logo ? " cc-img-side--logo" : ""}`}>
                 <img src={asset(c.logo || c.cover)} alt={c.name} loading="lazy" />
               </div>
             </div>
