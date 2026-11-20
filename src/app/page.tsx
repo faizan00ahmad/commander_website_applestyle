@@ -14,14 +14,11 @@ export default function Home() {
       <section className="hero">
         <HeroVisual />
         <div className="hero-content">
-          <p className="hero-eyebrow">Commander Group · Since 1996</p>
-          <h1>Industries Move Forward When <span>Expertise Comes Together</span></h1>
-          <p className="hero-desc">
-            Since 1996, Commander Group has developed a diversified business portfolio rooted in agriculture and extending into energy, united by a commitment to trusted relationships, responsible operations and long-term value creation.
-          </p>
+          <p className="hero-eyebrow">Established Since 1996</p>
+          <h1><span>Commander</span> Group</h1>
           <div className="hero-btns">
             <Link href="/companies" className="btn btn-primary">Explore Our Businesses</Link>
-            <Link href="/contact" className="btn btn-secondary">Partner With Commander Group</Link>
+            <Link href="/companies" className="btn btn-secondary">Our Companies</Link>
           </div>
         </div>
         <div className="hero-scroll">

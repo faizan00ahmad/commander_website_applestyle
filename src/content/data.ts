@@ -206,6 +206,7 @@ export const companies: Company[] = [
     short: "Rafco Energy",
     sector: "Energy · Infrastructure",
     theme: "energy",
+    logo: "/img/rafco-energy-logo.webp",
     cover: "/img/petrogas-05.jpg",
     tagline: "Built for Opportunity in a Changing Energy Landscape",
     description: [
