@@ -116,6 +116,7 @@ export const companies: Company[] = [
     short: "Gharbeen Seeds",
     sector: "Seeds · Agriculture",
     theme: "seeds",
+    logo: "/img/gharbeen-seeds-logo.png",
     cover: "/img/commander-agro-04.jpg",
     tagline: "Strong Beginnings for Tomorrow's Harvests",
     description: [
@@ -146,7 +147,7 @@ export const companies: Company[] = [
     short: "MAK AG",
     sector: "Agricultural Solutions",
     theme: "agro",
-    logo: "/img/mak-ag-logo.webp",
+    logo: "/img/mak-ag-logo.png",
     cover: "/img/commander-agro-10.jpg",
     description: [
       "A next-generation agri-solutions company bridging the gap between cutting-edge science and on-the-ground farming across Pakistan.",
@@ -206,7 +207,7 @@ export const companies: Company[] = [
     short: "Rafco Energy",
     sector: "Energy · Infrastructure",
     theme: "energy",
-    logo: "/img/rafco-energy-logo.webp",
+    logo: "/img/rafco-energy-logo.png",
     cover: "/img/petrogas-05.jpg",
     tagline: "Built for Opportunity in a Changing Energy Landscape",
     description: [

@@ -18,9 +18,6 @@ export default function CompaniesPage() {
         </div>
         <div className="container inner-hero-content">
           <Reveal>
-            <div className="co-hero-logo">
-              <img src={asset("/img/commander-group-logo.webp")} alt="Commander Group logo" />
-            </div>
             <p className="intro-eyebrow" style={{ color: "rgba(255,255,255,0.6)" }}>Commander Group · Since 1996</p>
             <h1>Our Companies</h1>
             <p>A diversified conglomerate spanning agriculture, petrochemicals, seeds, and energy. Six companies united under one mission of quality and trust.</p>
