@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import HeroVisual from "@/components/motion/HeroVisual";
 import LeaderSlider from "@/components/LeaderSlider";
+import ExploreProducts from "@/components/ExploreProducts";
 import { companies, stats, chairman, videoTestimonials } from "@/content/data";
 
 export default function Home() {
@@ -212,6 +213,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Explore Products ── */}
+      <ExploreProducts />
 
       {/* ── CTA ── */}
       <section className="card-section" style={{ textAlign: "center", background: "var(--bg-alt)" }}>

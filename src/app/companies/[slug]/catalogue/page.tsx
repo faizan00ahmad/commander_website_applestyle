@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import CatalogueGrid from "@/components/CatalogueGrid";
+import ProductSearch from "@/components/ProductSearch";
 import { companies } from "@/content/data";
 import { gharbeenProducts, gharbeenCategories } from "@/content/gharbeen-products";
 import type { Metadata } from "next";
@@ -47,6 +48,10 @@ export default function CataloguePage({ params }: { params: { slug: string } }) 
             <div style={{ marginBottom: 32 }}>
               <Link href="/companies/gharbeen" className="catalogue-back">&larr; Back to Gharbeen</Link>
             </div>
+          </Reveal>
+
+          <Reveal>
+            <ProductSearch />
           </Reveal>
 
           <CatalogueGrid />
