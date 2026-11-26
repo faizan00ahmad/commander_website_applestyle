@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import { companies } from "@/content/data";
-import { gharbeenProducts, gharbeenCategories } from "@/content/gharbeen-products";
+import { gharbeenProducts, gharbeenCategories, productUrlSlug } from "@/content/gharbeen-products";
 import { commanderAgroBags } from "@/content/commander-agro-products";
 import type { Metadata } from "next";
 
@@ -248,13 +248,13 @@ export default function CompanyPage({ params }: { params: { slug: string } }) {
                 <div className="catalogue-marquee">
                   <div className={`catalogue-marquee-track${ci % 2 === 1 ? " catalogue-marquee-track--reverse" : ""}`} style={{ "--marquee-items": items.length } as React.CSSProperties}>
                     {[...items, ...items].map((p, i) => (
-                      <div className="catalogue-preview-card" key={`${p.slug}-${cat}-${i}`}>
+                      <Link href={`/companies/gharbeen/catalogue/${productUrlSlug(p)}`} className="catalogue-preview-card" key={`${p.slug}-${cat}-${i}`}>
                         <div className="catalogue-preview-img">
                           <img src={asset(`/img/${p.imgDir}/${p.slug}.webp`)} alt={p.name} loading="lazy" />
                         </div>
                         <h4>{p.name}</h4>
                         <span className={`catalogue-badge catalogue-badge--${cat.toLowerCase().replace(/ /g, "-")}`}>{cat}</span>
-                      </div>
+                      </Link>
                     ))}
                   </div>
                 </div>

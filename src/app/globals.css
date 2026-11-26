@@ -1170,7 +1170,7 @@ body::after {
   }
 
   .catalogue-preview-card {
-    flex-shrink: 0; width: 180px;
+    flex-shrink: 0; width: 180px; text-decoration: none; color: var(--fg); cursor: pointer;
     background: var(--glass-bg); border: 1px solid var(--glass-border);
     border-radius: 16px; padding: 16px; text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -1293,7 +1293,7 @@ body::after {
     transform: rotate(-35deg);
     pointer-events: none; z-index: 1;
   }
-  .product-detail-img { position: relative; }
+  .product-detail-img { position: relative; overflow: hidden; }
   .product-detail-img img { max-width: 100%; max-height: 420px; object-fit: contain; }
   .product-detail-info { flex: 1; min-width: 0; }
   .product-detail-name {
