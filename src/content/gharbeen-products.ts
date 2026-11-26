@@ -33,7 +33,6 @@ export const gharbeenProducts: GharbeenProduct[] = [
   { name: "Cheval Super", slug: "cheval-super", category: "Herbicide", active: "Fluroxypyr Meptyl 12% + Florasulam 0.4% + MCPA 35.6%", formulation: "SC", size: "350 ml", imgDir: "gharbeen-bottles" },
   { name: "Cheval Ultra", slug: "cheval-ultra", category: "Herbicide", active: "Mesosulfuron Methyl + Florasulam + MCPA", formulation: "OD", size: "360 ml", imgDir: "gharbeen-bottles" },
   { name: "Fletcher", slug: "fletcher", category: "Herbicide", active: "Mesotrione 5% + Atrazine 50%", formulation: "SC", size: "800 ml", imgDir: "gharbeen-bottles" },
-  { name: "Fletcher 1 Ltr", slug: "fletcher-1ltr", category: "Herbicide", active: "Mesotrione 5% + Atrazine 50%", formulation: "SC", size: "1000 ml", imgDir: "gharbeen-bottles" },
   { name: "Graminex", slug: "graminex", category: "Herbicide", active: "Quizalofop-P-Ethyl", formulation: "EC", size: "800 ml", imgDir: "gharbeen-bottles" },
   { name: "Marcus", slug: "marcus", category: "Herbicide", active: "Butachlor 60%", formulation: "EC", size: "800 ml", imgDir: "gharbeen-bottles" },
   { name: "Rafale", slug: "rafale", category: "Herbicide", active: "Haloxyfop-P-Methyl 10.8%", formulation: "EC", size: "500 ml", imgDir: "gharbeen-bottles" },
@@ -47,7 +46,7 @@ export const gharbeenProducts: GharbeenProduct[] = [
   { name: "Clodinafop", slug: "clodinafop", category: "Herbicide", active: "Clodinafop Propargyl", formulation: "WP", size: "160 gm", imgDir: "gharbeen-sachets" },
   { name: "Gazonophate", slug: "gazonophate", category: "Herbicide", active: "Glyphosate Ammonium", formulation: "WG", size: "500 gm", imgDir: "gharbeen-sachets" },
   { name: "Maginot", slug: "maginot", category: "Herbicide", active: "Bispyribac Sodium 18% + Bensulfuron Methyl 12%", formulation: "WDG", size: "100 gm", imgDir: "gharbeen-sachets" },
-  { name: "Marcus", slug: "marcus-sachet", category: "Herbicide", active: "Metribuzin 70%", formulation: "WP", size: "250 gm", imgDir: "gharbeen-sachets" },
+  { name: "Marcus", slug: "marcus", category: "Herbicide", active: "Metribuzin 70%", formulation: "WP", size: "250 gm", imgDir: "gharbeen-sachets" },
   { name: "Metribuzin", slug: "metribuzin", category: "Herbicide", active: "Metribuzin", formulation: "WP", size: "100 gm", imgDir: "gharbeen-sachets" },
   { name: "Growler", slug: "growler", category: "Herbicide", active: "Metsulfuron Methyl 20%", formulation: "WG", size: "20 gm", imgDir: "gharbeen-sachets" },
 
@@ -55,7 +54,6 @@ export const gharbeenProducts: GharbeenProduct[] = [
   { name: "Armata", slug: "armata", category: "Insecticide", active: "Cypermethrin 15%", formulation: "EC", size: "500 ml", imgDir: "gharbeen-bottles" },
   { name: "Calder", slug: "calder", category: "Insecticide", active: "Emamectin Benzoate 4% + Chlorantraniliprole 12%", formulation: "SC", size: "100 ml", imgDir: "gharbeen-bottles" },
   { name: "Ceedo", slug: "ceedo", category: "Insecticide", active: "Clothianidin 20%", formulation: "SC", size: "200 ml", imgDir: "gharbeen-bottles" },
-  { name: "Ceedo 1000 ml", slug: "ceedo-1000-ml", category: "Insecticide", active: "Clothianidin 20%", formulation: "SC", size: "1000 ml", imgDir: "gharbeen-bottles" },
   { name: "Flanker", slug: "flanker", category: "Insecticide", active: "Chlorpyrifos 40%", formulation: "EC", size: "1000 ml", imgDir: "gharbeen-bottles" },
   { name: "Fonzer", slug: "fonzer", category: "Insecticide", active: "Lufenuron 5%", formulation: "EC", size: "400 ml", imgDir: "gharbeen-bottles" },
   { name: "Guderian", slug: "guderian", category: "Insecticide", active: "Imidacloprid + Lambda Cyhalothrin 2.5%", formulation: "EC", size: "1000 ml", imgDir: "gharbeen-bottles" },
@@ -80,7 +78,7 @@ export const gharbeenProducts: GharbeenProduct[] = [
   { name: "Konev", slug: "konev", category: "Insecticide", active: "Imidacloprid 25%", formulation: "WP", size: "200 gm", imgDir: "gharbeen-sachets" },
   { name: "MacArthur", slug: "macarthur", category: "Insecticide", active: "Emamectin Benzoate 5%", formulation: "WDG", size: "100 gm", imgDir: "gharbeen-sachets" },
   { name: "Nugent Gold", slug: "nugent-gold", category: "Insecticide", active: "Fipronil 0.3% + Emamectin Benzoate 0.05%", formulation: "GR", size: "200 gm", imgDir: "gharbeen-sachets" },
-  { name: "Nugent Plus", slug: "nugent-plus", category: "Insecticide", active: "Fipronil 0.4%", formulation: "G", size: "6 kg", imgDir: "gharbeen-sachets" },
+  { name: "Nugent Plus", slug: "nugent", category: "Insecticide", active: "Fipronil 0.4%", formulation: "G", size: "6 kg", imgDir: "gharbeen-sachets" },
   { name: "Paulus", slug: "paulus", category: "Insecticide", active: "Nitenpyram 50%", formulation: "WDG", size: "50 gm", imgDir: "gharbeen-sachets" },
   { name: "Revolt", slug: "revolt", category: "Insecticide", active: "Trichlorfon 80%", formulation: "SP", size: "60 gm", imgDir: "gharbeen-sachets" },
 
