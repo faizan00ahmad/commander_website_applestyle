@@ -176,6 +176,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Explore Products ── */}
+      <ExploreProducts />
+
       {/* ── Video Testimonials — Phone Mockup Marquee ── */}
       <section className="video-testimonials">
         <div className="container">
@@ -213,9 +216,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ── Explore Products ── */}
-      <ExploreProducts />
 
       {/* ── CTA ── */}
       <section className="card-section" style={{ textAlign: "center", background: "var(--bg-alt)" }}>
