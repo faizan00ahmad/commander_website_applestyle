@@ -1277,7 +1277,7 @@ body::after {
   }
   .product-detail-back:hover { color: var(--fg); }
   .product-detail-layout {
-    display: flex; gap: 48px; align-items: flex-start;
+    display: flex; gap: 48px; align-items: center;
   }
   .product-detail-img {
     flex: 0 0 380px; background: var(--glass-bg); border: 1px solid var(--glass-border);
