@@ -1,15 +1,9 @@
-"use client";
-
-import { useState } from "react";
+import Link from "next/link";
 import { asset } from "@/lib/asset";
 import Reveal from "@/components/Reveal";
-import ProductModal from "@/components/ProductModal";
-import { gharbeenProducts, gharbeenCategories } from "@/content/gharbeen-products";
-import type { GharbeenProduct } from "@/content/gharbeen-products";
+import { gharbeenProducts, gharbeenCategories, productUrlSlug } from "@/content/gharbeen-products";
 
 export default function CatalogueGrid() {
-  const [selected, setSelected] = useState<GharbeenProduct | null>(null);
-
   return (
     <>
       {gharbeenCategories.map((cat) => {
@@ -26,12 +20,9 @@ export default function CatalogueGrid() {
             <div className="catalogue-grid">
               {items.map((p) => (
                 <Reveal key={`${p.slug}-${p.imgDir}`}>
-                  <div
+                  <Link
+                    href={`/companies/gharbeen/catalogue/${productUrlSlug(p)}`}
                     className="catalogue-card catalogue-card--clickable"
-                    onClick={() => setSelected(p)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setSelected(p); }}
                   >
                     <div className="catalogue-img">
                       <img src={asset(`/img/${p.imgDir}/${p.slug}.webp`)} alt={p.name} loading="lazy" />
@@ -45,14 +36,13 @@ export default function CatalogueGrid() {
                         <span>{p.size}</span>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </Reveal>
               ))}
             </div>
           </div>
         );
       })}
-      <ProductModal product={selected} onClose={() => setSelected(null)} />
     </>
   );
 }
