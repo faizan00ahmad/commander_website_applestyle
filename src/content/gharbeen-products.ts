@@ -33,6 +33,7 @@ export const gharbeenProducts: GharbeenProduct[] = [
   { name: "Cheval Super", slug: "cheval-super", category: "Herbicide", active: "Fluroxypyr Meptyl 12% + Florasulam 0.4% + MCPA 35.6%", formulation: "SC", size: "350 ml", imgDir: "gharbeen-bottles" },
   { name: "Cheval Ultra", slug: "cheval-ultra", category: "Herbicide", active: "Mesosulfuron Methyl + Florasulam + MCPA", formulation: "OD", size: "360 ml", imgDir: "gharbeen-bottles" },
   { name: "Fletcher", slug: "fletcher", category: "Herbicide", active: "Mesotrione 5% + Atrazine 50%", formulation: "SC", size: "800 ml", imgDir: "gharbeen-bottles" },
+  { name: "Fletcher", slug: "fletcher-1ltr", category: "Herbicide", active: "Mesotrione 5% + Atrazine 50%", formulation: "SC", size: "1 Ltr", imgDir: "gharbeen-bottles" },
   { name: "Graminex", slug: "graminex", category: "Herbicide", active: "Quizalofop-P-Ethyl", formulation: "EC", size: "800 ml", imgDir: "gharbeen-bottles" },
   { name: "Marcus", slug: "marcus", category: "Herbicide", active: "Butachlor 60%", formulation: "EC", size: "800 ml", imgDir: "gharbeen-bottles" },
   { name: "Rafale", slug: "rafale", category: "Herbicide", active: "Haloxyfop-P-Methyl 10.8%", formulation: "EC", size: "500 ml", imgDir: "gharbeen-bottles" },
@@ -54,6 +55,7 @@ export const gharbeenProducts: GharbeenProduct[] = [
   { name: "Armata", slug: "armata", category: "Insecticide", active: "Cypermethrin 15%", formulation: "EC", size: "500 ml", imgDir: "gharbeen-bottles" },
   { name: "Calder", slug: "calder", category: "Insecticide", active: "Emamectin Benzoate 4% + Chlorantraniliprole 12%", formulation: "SC", size: "100 ml", imgDir: "gharbeen-bottles" },
   { name: "Ceedo", slug: "ceedo", category: "Insecticide", active: "Clothianidin 20%", formulation: "SC", size: "200 ml", imgDir: "gharbeen-bottles" },
+  { name: "Ceedo", slug: "ceedo-1000-ml", category: "Insecticide", active: "Clothianidin 20%", formulation: "SC", size: "1000 ml", imgDir: "gharbeen-bottles" },
   { name: "Flanker", slug: "flanker", category: "Insecticide", active: "Chlorpyrifos 40%", formulation: "EC", size: "1000 ml", imgDir: "gharbeen-bottles" },
   { name: "Fonzer", slug: "fonzer", category: "Insecticide", active: "Lufenuron 5%", formulation: "EC", size: "400 ml", imgDir: "gharbeen-bottles" },
   { name: "Guderian", slug: "guderian", category: "Insecticide", active: "Imidacloprid + Lambda Cyhalothrin 2.5%", formulation: "EC", size: "1000 ml", imgDir: "gharbeen-bottles" },
@@ -94,6 +96,31 @@ export const gharbeenProducts: GharbeenProduct[] = [
 
 export function gharbeenByCategory(cat: GharbeenCategory): GharbeenProduct[] {
   return gharbeenProducts.filter((p) => p.category === cat);
+}
+
+export function productUrlSlug(p: GharbeenProduct): string {
+  const dupes = gharbeenProducts.filter((x) => x.slug === p.slug);
+  if (dupes.length > 1) {
+    return `${p.slug}-${p.imgDir === "gharbeen-bottles" ? "bottle" : "sachet"}`;
+  }
+  return p.slug;
+}
+
+export function findProductByUrlSlug(urlSlug: string): GharbeenProduct | undefined {
+  const direct = gharbeenProducts.find((p) => p.slug === urlSlug);
+  if (direct) {
+    const dupes = gharbeenProducts.filter((x) => x.slug === urlSlug);
+    if (dupes.length === 1) return direct;
+  }
+  if (urlSlug.endsWith("-bottle")) {
+    const base = urlSlug.replace(/-bottle$/, "");
+    return gharbeenProducts.find((p) => p.slug === base && p.imgDir === "gharbeen-bottles");
+  }
+  if (urlSlug.endsWith("-sachet")) {
+    const base = urlSlug.replace(/-sachet$/, "");
+    return gharbeenProducts.find((p) => p.slug === base && p.imgDir === "gharbeen-sachets");
+  }
+  return undefined;
 }
 
 // Legacy exports for backward compatibility
