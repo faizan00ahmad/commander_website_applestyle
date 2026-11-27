@@ -1,13 +1,17 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import Link from "next/link";
 import { asset } from "@/lib/asset";
 import { gharbeenProducts, productUrlSlug } from "@/content/gharbeen-products";
 
-export default function ProductSearch() {
-  const [query, setQuery] = useState("");
-
+export default function ProductSearch({
+  query,
+  onQueryChange,
+}: {
+  query: string;
+  onQueryChange: (q: string) => void;
+}) {
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (q.length < 2) return [];
@@ -29,10 +33,10 @@ export default function ProductSearch() {
           className="product-search-input"
           placeholder="Search products by name, ingredient, or category..."
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => onQueryChange(e.target.value)}
         />
         {query && (
-          <button className="product-search-clear" onClick={() => setQuery("")} aria-label="Clear search">
+          <button className="product-search-clear" onClick={() => onQueryChange("")} aria-label="Clear search">
             &times;
           </button>
         )}

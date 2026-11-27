@@ -2,8 +2,7 @@ import { asset } from "@/lib/asset";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
-import CatalogueGrid from "@/components/CatalogueGrid";
-import ProductSearch from "@/components/ProductSearch";
+import CatalogueSection from "@/components/CatalogueSection";
 import { companies } from "@/content/data";
 import { gharbeenProducts, gharbeenCategories } from "@/content/gharbeen-products";
 import type { Metadata } from "next";
@@ -50,11 +49,7 @@ export default function CataloguePage({ params }: { params: { slug: string } }) 
             </div>
           </Reveal>
 
-          <Reveal>
-            <ProductSearch />
-          </Reveal>
-
-          <CatalogueGrid />
+          <CatalogueSection />
         </div>
       </section>
 
