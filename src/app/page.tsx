@@ -6,7 +6,8 @@ import Counter from "@/components/Counter";
 import HeroVisual from "@/components/motion/HeroVisual";
 import LeaderSlider from "@/components/LeaderSlider";
 import ExploreProducts from "@/components/ExploreProducts";
-import { companies, stats, chairman, socialHighlights } from "@/content/data";
+import SocialHighlights from "@/components/SocialHighlights";
+import { companies, stats, chairman } from "@/content/data";
 
 export default function Home() {
   return (
@@ -180,7 +181,7 @@ export default function Home() {
       <ExploreProducts />
 
       {/* ── Social Media Highlights ── */}
-      <section className="video-testimonials">
+      <section className="social-highlights">
         <div className="container">
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 8 }}>
@@ -189,30 +190,11 @@ export default function Home() {
                 Social Media Highlights
               </h2>
               <p style={{ fontSize: 16, color: "var(--fg-dim)", maxWidth: 520, margin: "12px auto 0", lineHeight: 1.6 }}>
-                Latest videos from our social media — field results, product demos, and farmer stories.
+                Latest videos from our social media, field results, product demos, and farmer stories.
               </p>
             </div>
           </Reveal>
-        </div>
-        <div className="phone-marquee">
-          <div className="phone-track">
-            {socialHighlights.map((v) => (
-              <div className="phone-mockup" key={v.id}>
-                <div className="phone-frame">
-                  <div className="phone-notch" />
-                  <div className="phone-screen">
-                    <iframe
-                      src={`https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/${v.id}/&show_text=false&width=280`}
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                      allowFullScreen
-                      loading="lazy"
-                      title={`Social media highlight ${v.id}`}
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <SocialHighlights />
         </div>
       </section>
 
