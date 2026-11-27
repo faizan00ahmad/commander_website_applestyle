@@ -301,10 +301,20 @@ export const testimonials = [
   { name: "Abdul Rehman", role: "Retailer, Faisalabad", text: "Commander Petrogas delivers on time, every time. In an industry full of supply gaps, their consistency has made them my most trusted energy partner." },
 ];
 
-export const videoTestimonials = [
-  { id: "2731135244007692", title: "Farmer Testimonial: Field Results" },
-  { id: "698635022663553", title: "Farmer Feedback: Crop Protection" },
-  { id: "3987702088130322", title: "Farmer Review: Product Performance" },
+export const socialHighlights = [
+  { id: "2299407660792251" },
+  { id: "1688699839590479" },
+  { id: "1401285121796334" },
+  { id: "3030880800585375" },
+  { id: "3071145966420863" },
+  { id: "1668867044938826" },
+  { id: "1437390338517983" },
+  { id: "2133701770567742" },
+  { id: "1365787202113269" },
+  { id: "2033444237284642" },
+  { id: "2731135244007692" },
+  { id: "698635022663553" },
+  { id: "3987702088130322" },
 ];
 
 export const stats = [

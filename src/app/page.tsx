@@ -6,7 +6,7 @@ import Counter from "@/components/Counter";
 import HeroVisual from "@/components/motion/HeroVisual";
 import LeaderSlider from "@/components/LeaderSlider";
 import ExploreProducts from "@/components/ExploreProducts";
-import { companies, stats, chairman, videoTestimonials } from "@/content/data";
+import { companies, stats, chairman, socialHighlights } from "@/content/data";
 
 export default function Home() {
   return (
@@ -179,24 +179,24 @@ export default function Home() {
       {/* ── Explore Products ── */}
       <ExploreProducts />
 
-      {/* ── Video Testimonials — Phone Mockup Marquee ── */}
+      {/* ── Social Media Highlights ── */}
       <section className="video-testimonials">
         <div className="container">
           <Reveal>
             <div style={{ textAlign: "center", marginBottom: 8 }}>
-              <p className="intro-eyebrow">From the Field</p>
+              <p className="intro-eyebrow">Follow Us</p>
               <h2 style={{ fontSize: "clamp(26px, 3.5vw, 38px)", fontWeight: 700, letterSpacing: "-0.02em" }}>
-                Hear it from our farmers
+                Social Media Highlights
               </h2>
               <p style={{ fontSize: 16, color: "var(--fg-dim)", maxWidth: 520, margin: "12px auto 0", lineHeight: 1.6 }}>
-                Real stories from the farmers and partners who grow with Commander Group every season.
+                Latest videos from our social media — field results, product demos, and farmer stories.
               </p>
             </div>
           </Reveal>
         </div>
         <div className="phone-marquee">
           <div className="phone-track">
-            {videoTestimonials.map((v) => (
+            {socialHighlights.map((v) => (
               <div className="phone-mockup" key={v.id}>
                 <div className="phone-frame">
                   <div className="phone-notch" />
@@ -206,11 +206,10 @@ export default function Home() {
                       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                       allowFullScreen
                       loading="lazy"
-                      title={v.title}
+                      title={`Social media highlight ${v.id}`}
                     />
                   </div>
                 </div>
-                <div className="phone-label">{v.title}</div>
               </div>
             ))}
           </div>
