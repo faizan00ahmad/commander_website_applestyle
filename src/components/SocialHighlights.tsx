@@ -11,7 +11,7 @@ export default function SocialHighlights() {
         {items.map((v, i) => (
           <div className="social-card" key={`${v.id}-${i}`}>
             <iframe
-              src={`https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/${v.id}/&show_text=false&width=260&height=260`}
+              src={`https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/${v.id}/&show_text=false&width=280&height=280`}
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               allowFullScreen
               loading="lazy"
