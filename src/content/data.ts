@@ -320,7 +320,7 @@ export const socialHighlights = [
 export const stats = [
   { value: 1996, label: "Year Established", plain: true },
   { value: 25, suffix: "+", label: "Years of Trust" },
-  { value: 2, suffix: "", label: "Partners" },
+  { value: 3000, suffix: "+", label: "Retail Partners" },
 ];
 
 export const distributors = [
